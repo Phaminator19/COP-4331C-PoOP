@@ -1,0 +1,39 @@
+NOTE:
+
+- Setup a github repository and add participants.
+
+- Android Studio SDK tools or IntelliJ IDE:
+
+https://developer.android.com/codelabs/build-your-first-android-app#5
+
+Intellij IDE:
+https://www.jetbrains.com/help/idea/create-your-first-android-application.html#2f6bced8
+
+
+- Roles? 
+	- Backend (database and application):
+	- FrontEnd (User Interface):
+	- Create Test Cases in codes:
+
+
+- Regular checks in meetings: twice a week from now on. Date?
+
+- First step (important): Able to let THE user to login into our application.
+
+- second step: Achieve all the requirement (find them in the SRS docx and DetailedDesign docx)
+ Meet the major requirements:
+	- Functional Requirement
+	- Interface Requirement
+	- Security Requirement
+	- Physical Environment requirement
+	- User and Human Factors Requirement
+	- Data Requirement
+
+Minor Requirements:
+	- Documentation requirement
+	- Quality Assurance requirement
+
+- Third Step: pass some test cases
+
+- Fourth Step: Project presentation by uploading a video that showing the running application. 
+
