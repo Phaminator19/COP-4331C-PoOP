@@ -16,7 +16,8 @@ https://www.jetbrains.com/help/idea/create-your-first-android-application.html#2
 	- Create Test Cases in codes:
 
 
-- Regular checks in meetings: twice a week from now on. Date?
+- Regular checks in meetings: twice a week from now on. Date? 
+Meeting: Every Friday, every Wednesday? Tuesday and Thursday meeting at 8 PM
 
 - First step (important): Able to let THE user to login into our application.
 
