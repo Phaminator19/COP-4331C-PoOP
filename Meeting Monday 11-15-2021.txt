@@ -11,8 +11,8 @@ https://www.jetbrains.com/help/idea/create-your-first-android-application.html#2
 
 
 - Roles? 
-	- Backend (database and application):
-	- FrontEnd (User Interface):
+	- Backend (database and application): Quang, Ann?
+	- FrontEnd (User Interface): Courtney, Nia
 	- Create Test Cases in codes:
 
 
