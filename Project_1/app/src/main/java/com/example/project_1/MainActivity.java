@@ -1,16 +1,20 @@
 package com.example.project_1;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.*;
-import java.io.File;
-
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,24 +24,50 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public FileOutputStream User_Database(View v, String str) throws IOException {
-        FileOutputStream textFile = new FileOutputStream ("users.properties.txt");
-
-        /*
-        Saving the user name, email address, and password. User mode into the textFile. We will use
-        this text file to compare the user strings again so that person can access their profile again
-         */
-        byte[] strToBytes = str.getBytes();
-        textFile.write(strToBytes);
-
-        textFile.close();
-
-        return textFile;
+    public void read_users_info (View v) {
+        
+        
+        EditText user_name = findViewById(R.id.user_name);
+        EditText email_address = findViewById(R.id.user_emailAddress);
+        EditText password = findViewById(R.id.user_password);
+        
+        String name = user_name.getText().toString();
+        String email = email_address.getText().toString();
+        String pass = password.getText().toString();
+        
+        User new_user = new User(name, email, pass);
+        
+        
+        
     }
+
 
     /*
     We need methods that do database that will store User Photos. Group creation. Event creation.
     Photo Shared by User (Media History).
      */
 
+    public void User_Photo(String[] photoLink) throws SQLException, IOException {
+        Connection connection = null;
+        PreparedStatement statement = null;
+        FileInputStream imageInputStream = null;
+
+        try {
+            connection = DriverManager.getConnection(
+                                        "jdbc:mysql://localhost:3306/codippa", "root", "root");
+            statement = connection.prepareStatement("insert into users(Type,Description,Status,ImageData) values('Bug','Test','Active',?)");
+            imageInputStream = new FileInputStream(new File("d:\\download.png"))
+            statement.setBinaryStream(1, imageInputStream);
+            statement.execute();
+        } catch (SQLException sqe) {
+            throw sqe;
+        } finally {
+            if (connection != null)
+                connection.close();
+            if (imageInputStream != null)
+                imageInputStream.close();
+        }
+    }
+
+    public
 }
