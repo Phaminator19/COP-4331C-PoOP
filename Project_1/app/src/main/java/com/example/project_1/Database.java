@@ -31,7 +31,7 @@ public class Database {
         userList.add(newUser);
     }
 
-    public Object loadDataBase(FileOutputStream file, User new_user) throws IOException {
+    public Object loadDataBase(PrintWriter file, User new_user) throws IOException {
 //        File data = new File(filename);
 //        Scanner reader = new Scanner(data);
 
@@ -44,10 +44,8 @@ public class Database {
 
             updateDatabase(created_user);
 
-            byte[] myStrOutput = userList.get(0).getUserName().getBytes();
-            byte[] PassOutput = userList.get(0).getPassword().getBytes();
-            file.write(myStrOutput);
-            file.write(PassOutput);
+            file.println("Username: " + userList.get(0).getUserName());
+            file.println("password: " + userList.get(0).getPassword());
 
             userList.clear();
             return file;

@@ -6,9 +6,11 @@ import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
@@ -39,22 +41,16 @@ public class MainActivity extends AppCompatActivity {
         
         User new_user = new User(name, email, pass);
 
-        FileOutputStream user_db;
-        File textfile = new File("user.db");
-        if(isTheFileExists(textfile)) {
-            user_db = new FileOutputStream(textfile, false);
-            new_database.loadDataBase(user_db, new_user);
-        }
-        else {
-            user_db = new FileOutputStream(textfile, true);
-            new_database.loadDataBase(user_db, new_user);
+        try (FileWriter textfile = new FileWriter("users.db", true); BufferedWriter user_db = new BufferedWriter(textfile);
+        PrintWriter out = new PrintWriter(user_db)) {
+            new_database.loadDataBase(out, new_user);
+
+        } catch(IOException e) {
+            e.printStackTrace();
         }
 
     }
 
-    public boolean isTheFileExists(File user_db) {
-        return user_db.exists();
-    }
 
 
 
@@ -73,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
             connection = DriverManager.getConnection(
                                         "jdbc:mysql://localhost:3306/codippa", "root", "root");
             statement = connection.prepareStatement("insert into users(Type,Description,Status,ImageData) values('Bug','Test','Active',?)");
-            imageInputStream = new FileInputStream(new File("d:\\download.png"))
+            imageInputStream = new FileInputStream(new File("d:\\download.png"));
             statement.setBinaryStream(1, imageInputStream);
             statement.execute();
         } catch (SQLException sqe) {
@@ -85,6 +81,5 @@ public class MainActivity extends AppCompatActivity {
                 imageInputStream.close();
         }
     }
-
-    public
+    // ??? //
 }
