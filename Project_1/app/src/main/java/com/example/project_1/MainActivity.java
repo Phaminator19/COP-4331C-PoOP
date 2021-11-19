@@ -3,6 +3,7 @@ package com.example.project_1;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.content.Intent;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -20,27 +21,29 @@ import java.sql.SQLException;
 
 public class MainActivity extends AppCompatActivity {
     Database new_database = new Database();
-
+    Button lbtn = (Button)findViewById(R.id.loginStart);
+    Button sbtn = (Button)findViewById(R.id.signupStart);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-    }
+        // login button takes users to login activity when clicked - Estefania
+        lbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, Login.class));
+            }
+        });
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        loginactivity();
-    }
-
-    private void loginactivity() {
-
-        Intent LoginIntent=new Intent(MainActivity.this,Login.class);
-        LoginIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        startActivity(LoginIntent);
-        finish();
+        // sign up button takes users to sign up activity when clicked - Estefania
+        sbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, Signup.class));
+            }
+        });
     }
 
     public void read_users_info (View v) throws IOException{
