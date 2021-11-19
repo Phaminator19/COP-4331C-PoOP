@@ -19,7 +19,7 @@ public class User {
     }
 
     public User(String user_name, String emailAddress, String password) {
-        if ((isPasswordAtLeast15Characters(password)) && (isValueAtLeastOne(user_name) || isValueAtLeastOne(emailAddress)))
+        if ((isPasswordAtLeast10Characters(password)) && (isValueAtLeastOne(user_name) || isValueAtLeastOne(emailAddress)))
         {
             this.UserName = user_name;
             this.EmailAddress = emailAddress;
@@ -30,7 +30,7 @@ public class User {
 
 
     public void updateUser (String user_name, String emailAddress, String password) {
-        if ((isPasswordAtLeast15Characters(password)) && (isValueAtLeastOne(user_name) || isValueAtLeastOne(emailAddress))) {
+        if ((isPasswordAtLeast10Characters(password)) && (isValueAtLeastOne(user_name) || isValueAtLeastOne(emailAddress))) {
             setUserName(user_name);
             setEmailAddress(emailAddress);
             setPassword(password);
@@ -42,8 +42,8 @@ public class User {
         return value.length() > 0;
     }
 
-    private boolean isPasswordAtLeast15Characters(String password) {
-        return password.length() >= 15;
+    private boolean isPasswordAtLeast10Characters(String password) {
+        return password.length() >= 10;
     }
 
     static class InvalidValueException extends IllegalArgumentException {

@@ -17,16 +17,18 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class MainActivity extends AppCompatActivity {
+    Database new_database = new Database();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
     }
 
-    public void read_users_info (View v) {
-        
-        
+    public void read_users_info (View v) throws IOException{
+
         EditText user_name = findViewById(R.id.user_name);
         EditText email_address = findViewById(R.id.user_emailAddress);
         EditText password = findViewById(R.id.user_password);
@@ -36,10 +38,25 @@ public class MainActivity extends AppCompatActivity {
         String pass = password.getText().toString();
         
         User new_user = new User(name, email, pass);
-        
-        
-        
+
+        FileOutputStream user_db;
+        File textfile = new File("user.db");
+        if(isTheFileExists(textfile)) {
+            user_db = new FileOutputStream(textfile, false);
+            new_database.loadDataBase(user_db, new_user);
+        }
+        else {
+            user_db = new FileOutputStream(textfile, true);
+            new_database.loadDataBase(user_db, new_user);
+        }
+
     }
+
+    public boolean isTheFileExists(File user_db) {
+        return user_db.exists();
+    }
+
+
 
 
     /*

@@ -2,8 +2,10 @@ package com.example.project_1;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -15,21 +17,21 @@ public class Database {
         userList = new ArrayList<>();
     }
 
-    public void updateDatabase(User newUser) {
-        File data = new File("users.db");
-        PrintWriter fs;
-        try {
-            fs = new PrintWriter(data);
-        } catch (IOException e) {
-            System.out.println("IO Exception");
-            return;
-        }
-        fs.flush();
 
+    public void updateDatabase(User newUser) {
+//        File data = new File("users.db");
+//        PrintWriter fs;
+//        try {
+//            fs = new PrintWriter(data);
+//        } catch (IOException e) {
+//            System.out.println("IO Exception");
+//            return;
+//        }
+//        fs.flush();
         userList.add(newUser);
     }
 
-    public Object loadDataBase(String filename, User new_user) throws FileNotFoundException {
+    public Object loadDataBase(FileOutputStream file, User new_user) throws IOException {
 //        File data = new File(filename);
 //        Scanner reader = new Scanner(data);
 
@@ -41,6 +43,14 @@ public class Database {
             created_user.updateUser(name, email, pass);
 
             updateDatabase(created_user);
+
+            byte[] myStrOutput = userList.get(0).getUserName().getBytes();
+            byte[] PassOutput = userList.get(0).getPassword().getBytes();
+            file.write(myStrOutput);
+            file.write(PassOutput);
+
+            userList.clear();
+            return file;
 
     }
 }
