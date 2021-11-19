@@ -29,6 +29,20 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        loginactivity();
+    }
+
+    private void loginactivity() {
+
+        Intent LoginIntent=new Intent(MainActivity.this,Login.class);
+        LoginIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(LoginIntent);
+        finish();
+    }
+
     public void read_users_info (View v) throws IOException{
 
         EditText user_name = findViewById(R.id.user_name);
