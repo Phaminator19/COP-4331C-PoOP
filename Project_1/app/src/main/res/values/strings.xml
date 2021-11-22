@@ -5,4 +5,10 @@
     <string name="welcome">welcome to</string>
     <string name="returning_user">returning user?</string>
     <string name="new_user">new user?</string>
+    <string name="todo">TODO</string>
+    <string-array name="user_types">
+        <item>Standard User</item>
+        <item>Moderator</item>
+        <item>Administrator</item>
+    </string-array>
 </resources>

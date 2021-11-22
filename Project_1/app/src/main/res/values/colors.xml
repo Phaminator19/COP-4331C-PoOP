@@ -9,4 +9,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="standard">#FFFFF8EA</color>
     <color name="dark_org_button">#FFF5D085</color>
+    <color name="dark_font">#FF381D2A</color>
 </resources>
