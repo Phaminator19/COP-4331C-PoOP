@@ -5,56 +5,33 @@
       <config />
     </shared>
   </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="fire" />
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="be964bb4-681a-44e9-abc9-1839b2ad9cdb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Project_1/app/src/main/res/layout/activity_signup.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/deploymentTargetDropDown.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project_1/app/google-services.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project_1/app/src/main/java/com/example/project_1/GroupDatabase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project_1/app/src/main/java/com/example/project_1/UserActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project_1/app/src/main/java/com/example/project_1/UserProfileActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project_1/app/src/main/res/layout/activity_user_profile.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/Project_1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Project_1.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Meeting Monday 11-15-2021.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Meeting Monday 11-15-2021.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_1/.floo" beforeDir="false" afterPath="$PROJECT_DIR$/Project_1/.floo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_1/.flooignore" beforeDir="false" afterPath="$PROJECT_DIR$/Project_1/.flooignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_1/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/Project_1/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_1/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/Project_1/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_1/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Project_1/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_1/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Project_1/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_1/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Project_1/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_1/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Project_1/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project_1/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/Project_1/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_1/app/proguard-rules.pro" beforeDir="false" afterPath="$PROJECT_DIR$/Project_1/app/proguard-rules.pro" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_1/app/src/androidTest/java/com/example/project_1/ExampleInstrumentedTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project_1/app/src/androidTest/java/com/example/project_1/ExampleInstrumentedTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project_1/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Project_1/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_1/app/src/main/java/com/example/project_1/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project_1/app/src/main/java/com/example/project_1/Database.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_1/app/src/main/java/com/example/project_1/FriendList.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project_1/app/src/main/java/com/example/project_1/FriendList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project_1/app/src/main/java/com/example/project_1/Group.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project_1/app/src/main/java/com/example/project_1/Group.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_1/app/src/main/java/com/example/project_1/ListType.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project_1/app/src/main/java/com/example/project_1/ListType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_1/app/src/main/java/com/example/project_1/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project_1/app/src/main/java/com/example/project_1/Login.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project_1/app/src/main/java/com/example/project_1/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project_1/app/src/main/java/com/example/project_1/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_1/app/src/main/java/com/example/project_1/Signup.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project_1/app/src/main/java/com/example/project_1/Signup.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_1/app/src/main/java/com/example/project_1/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project_1/app/src/main/java/com/example/project_1/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_1/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Project_1/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_1/app/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Project_1/app/src/main/res/drawable/ic_launcher_background.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_1/app/src/main/res/layout/activity_login.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Project_1/app/src/main/res/layout/activity_login.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_1/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Project_1/app/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_1/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Project_1/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_1/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Project_1/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_1/app/src/main/res/values-night/themes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Project_1/app/src/main/res/values-night/themes.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_1/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Project_1/app/src/main/res/values/colors.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project_1/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Project_1/app/src/main/res/values/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_1/app/src/main/res/values/themes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Project_1/app/src/main/res/values/themes.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_1/app/src/test/java/com/example/project_1/ExampleUnitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project_1/app/src/test/java/com/example/project_1/ExampleUnitTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project_1/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/Project_1/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project_1/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Project_1/gradle.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_1/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Project_1/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_1/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/Project_1/gradlew" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_1/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/Project_1/gradlew.bat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project_1/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/Project_1/settings.gradle" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -62,7 +39,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\Estef\.android\avd\Pixel_5_API_30.avd]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\court\.android\avd\Pixel_3a_API_28.avd]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$/Project_1">
       <ProjectState />
@@ -84,10 +61,19 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="layoutResourceFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
+  <component name="Git.Merge.Settings">
+    <option name="BRANCH" value="front-end-work" />
+  </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="216x895AdhDer7GUrJIfVBC8BDq" />
@@ -101,11 +87,20 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../MyApplication" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Project_1/app" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.17" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.example.project_1" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\court\OneDrive\Documents\PooP_Assignment\Project_1\app" />
+    </key>
+    <key name="android.template.1769802165">
       <recent name="com.example.project_1" />
     </key>
   </component>
@@ -190,5 +185,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

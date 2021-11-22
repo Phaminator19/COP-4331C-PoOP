@@ -98,5 +98,7 @@ public class MainActivity extends AppCompatActivity {
                 imageInputStream.close();
         }
     }
-    // ??? //
+    public void AccountSettings (View view) {
+
+    }
 }
