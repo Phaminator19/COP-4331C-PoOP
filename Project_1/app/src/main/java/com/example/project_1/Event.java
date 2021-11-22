@@ -23,7 +23,6 @@ public class Event extends AppCompatActivity {
     }
 
     public void setEventtitle(String eventtitle){
-
         this.eventtitle = eventtitle;
     }
 
@@ -34,6 +33,7 @@ public class Event extends AppCompatActivity {
     public void setEventcategory(String eventcategory){
         this.eventcategory = eventcategory;
     }
+
 
 //    public Integer getEventpicture(){
 //        return eventpicture;
