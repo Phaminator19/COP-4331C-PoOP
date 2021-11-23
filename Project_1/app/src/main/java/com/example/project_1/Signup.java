@@ -31,19 +31,11 @@ import java.sql.PreparedStatement;
 
 
 public class Signup extends AppCompatActivity{
+    Button registerButton;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
 
-        Button registerButton = (Button)findViewById(R.id.signup);
-
-        //click the register button - Quang
-        registerButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(Signup.this, MainActivity.class));
-            }
-        });
 
 
         // this populates the drop down menu with the three user types - Estefania
@@ -58,49 +50,60 @@ public class Signup extends AppCompatActivity{
     public void read_users_info (View v) throws IOException {
         User_Database new_User_database = new User_Database();
 
-        int password_length = 10;
+        registerButton = (Button)findViewById(R.id.signup);
+        //click the register button - Quang
+        registerButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
-        EditText user_name = findViewById(R.id.signupUsername);
-        EditText email_address = findViewById(R.id.signupEmail);
-        EditText password = findViewById(R.id.loginPassword);
+                int password_length = 10;
 
-        String name = user_name.getText().toString().trim();
-        String email = email_address.getText().toString().trim();
-        String pass = password.getText().toString().trim();
+                EditText user_name = findViewById(R.id.signupUsername);
+                EditText email_address = findViewById(R.id.signupEmail);
+                EditText password = findViewById(R.id.loginPassword);
 
-        if(pass.isEmpty()) {
-            password.setError("Password required");
-            password.requestFocus();
-            return;
-        }
+                String name = user_name.getText().toString().trim();
+                String email = email_address.getText().toString().trim();
+                String pass = password.getText().toString().trim();
 
-        if(name.isEmpty()) {
-            user_name.setError("Username required");
-            user_name.requestFocus();
-            return;
-        }
+                if(pass.isEmpty()) {
+                    password.setError("Password required");
+                    password.requestFocus();
+                    return;
+                }
 
-        if(email.isEmpty()) {
-            email_address.setError("Email address is required");
-            email_address.requestFocus();
-            return;
-        }
+                if(name.isEmpty()) {
+                    user_name.setError("Username required");
+                    user_name.requestFocus();
+                    return;
+                }
 
-        if(pass.length() >= password_length) {
-            password.setError("Password doesn't meet the require length of at least 10 characters");
-            password.requestFocus();
-            return;
-        }
+                if(email.isEmpty()) {
+                    email_address.setError("Email address is required");
+                    email_address.requestFocus();
+                    return;
+                }
 
-        User new_user = new User(name, email, pass);
+                if(pass.length() < password_length) {
+                    password.setError("Password doesn't meet the require length of at least 10 characters");
+                    password.requestFocus();
+                    return;
+                }
 
-        try (FileWriter textfile = new FileWriter("users.db", true); BufferedWriter user_db = new BufferedWriter(textfile);
-             PrintWriter out = new PrintWriter(user_db)) {
-            new_User_database.loadDataBase(out, new_user);
+                User new_user = new User(name, email, pass);
 
-        } catch (IOException e) {
-            Toast.makeText(Signup.this, "failed to register a new user", Toast.LENGTH_LONG).show();
-        }
+                try (FileWriter textfile = new FileWriter("users.db", true); BufferedWriter user_db = new BufferedWriter(textfile);
+                     PrintWriter out = new PrintWriter(user_db)) {
+                    new_User_database.loadDataBase(out, new_user);
+
+                } catch (IOException e) {
+                    Toast.makeText(Signup.this, "failed to register a new user", Toast.LENGTH_LONG).show();
+                }
+
+                startActivity(new Intent(Signup.this, MainActivity.class));
+            }
+        });
+
     }
 
     }
