@@ -140,13 +140,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:autofillHints="pronouns"
-        android:ems="10"
-        android:fontFamily="@font/lancelot"
-        android:hint="pronouns"
-        android:inputType="text"
-        android:minHeight="48dp"
-        android:textColor="@color/dark_font"
         android:textColorHint="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.793"
@@ -174,3 +167,4 @@
         tools:ignore="SpeakableTextPresentCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
