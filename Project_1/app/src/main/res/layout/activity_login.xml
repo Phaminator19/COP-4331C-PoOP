@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/standard"
-    tools:context=".Signup">
+    tools:context=".Login">
 
     <TextView
         android:id="@+id/textView"
@@ -14,10 +14,9 @@
         android:layout_marginStart="169dp"
         android:layout_marginEnd="169dp"
         android:fontFamily="@font/lancelot"
-        android:text="@string/welcome"
-        android:textColor="@color/black"
+        android:text="welcome back to"
+        android:textColor="@color/dark_font"
         android:textSize="30sp"
-        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/title"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -33,9 +32,8 @@
         android:layout_marginBottom="66dp"
         android:fontFamily="@font/lancelot"
         android:text="@string/app_name"
-        android:textColor="@color/black"
+        android:textColor="@color/dark_font"
         android:textSize="50sp"
-        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.505"
@@ -43,51 +41,59 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.259" />
 
+    <ImageView
+        android:id="@+id/agora"
+        android:layout_width="100dp"
+        android:layout_height="103dp"
+        android:contentDescription="@string/todo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.39"
+        app:srcCompat="@drawable/agora" />
+
 
     <EditText
-        android:id="@+id/signupEmail"
+        android:id="@+id/loginUsername"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:autofillHints="username"
         android:ems="10"
-        android:inputType="textEmailAddress"
+        android:inputType="text"
         android:minHeight="48dp"
-        android:hint="@string/email"
-        android:fontFamily="@font/lancelot"
-        android:textColor="@color/dark_font"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title"
-        app:layout_constraintVertical_bias="0.081"
+        app:layout_constraintTop_toBottomOf="@+id/agora"
+        app:layout_constraintVertical_bias="0.191"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <EditText
-        android:id="@+id/signupPassword"
+        android:id="@+id/loginPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="@string/password"
+        android:autofillHints="password"
         android:ems="10"
-        android:fontFamily="@font/lancelot"
-        android:minHeight="48dp"
         android:inputType="textPassword"
-        android:textColor="@color/dark_font"
+        android:minHeight="48dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.537"
+        app:layout_constraintVertical_bias="0.721"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <Button
-        android:id="@+id/signup"
+        android:id="@+id/login"
         android:layout_width="221dp"
         android:layout_height="48dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:fontFamily="@font/lancelot"
-        android:onClick="read_users_info"
         android:text="@string/login"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@color/dark_font"
@@ -98,36 +104,38 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.764"
+        app:layout_constraintVertical_bias="0.812"
         tools:ignore="SpeakableTextPresentCheck" />
 
-    <EditText
-        android:id="@+id/signupUsername"
+    <TextView
+        android:id="@+id/lusername"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:ems="10"
+        android:layout_marginTop="356dp"
+        android:text="username"
         android:fontFamily="@font/lancelot"
-        android:hint="@string/username"
-        android:importantForAutofill="no"
-        android:inputType="text"
-        android:minHeight="48dp"
         android:textColor="@color/dark_font"
-        app:layout_constraintBottom_toTopOf="@+id/signupPassword"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/loginUsername"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/signupEmail" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
-    <Spinner
-        android:id="@+id/userType"
-        android:layout_width="197dp"
-        android:layout_height="48dp"
-        android:background="@android:drawable/btn_dropdown"
-        android:spinnerMode="dropdown"
-        app:backgroundTint="#C4D6B0"
-        app:layout_constraintBottom_toTopOf="@+id/signup"
+    <TextView
+        android:id="@+id/lpass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="password"
+        android:fontFamily="@font/lancelot"
+        android:textColor="@color/dark_font"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/loginPassword"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/signupPassword"
-        tools:ignore="SpeakableTextPresentCheck" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
