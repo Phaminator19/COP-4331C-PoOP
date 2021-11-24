@@ -59,6 +59,7 @@
                     android:paddingRight="5dp"
                     android:inputType="text"
                     android:autofillHints="">
+
                 </EditText>
             </LinearLayout>
 
