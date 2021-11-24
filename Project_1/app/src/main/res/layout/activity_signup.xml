@@ -87,10 +87,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:fontFamily="@font/lancelot"
-<<<<<<< HEAD
         android:onClick="read_users_info"
-=======
->>>>>>> BACKUP_BRANCH
         android:text="@string/login"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@color/dark_font"
@@ -117,8 +114,10 @@
         android:textColor="@color/dark_font"
         app:layout_constraintBottom_toTopOf="@+id/signupPassword"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/signupEmail" />
+        app:layout_constraintTop_toBottomOf="@+id/signupEmail"
+        app:layout_constraintVertical_bias="0.578" />
 
     <Spinner
         android:id="@+id/userType"
@@ -126,15 +125,16 @@
         android:layout_height="48dp"
         android:background="@android:drawable/btn_dropdown"
         android:spinnerMode="dropdown"
+        android:hint="Select User Mode"
         app:backgroundTint="#C4D6B0"
-        app:layout_constraintBottom_toTopOf="@+id/signup"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/signupPassword"
+        app:layout_constraintVertical_bias="0.104"
         tools:ignore="SpeakableTextPresentCheck" />
 
-<<<<<<< HEAD
+
 </androidx.constraintlayout.widget.ConstraintLayout>
-=======
-</androidx.constraintlayout.widget.ConstraintLayout>
->>>>>>> BACKUP_BRANCH
+
