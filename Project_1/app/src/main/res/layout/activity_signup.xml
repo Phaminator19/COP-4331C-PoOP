@@ -87,7 +87,10 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:fontFamily="@font/lancelot"
+<<<<<<< HEAD
         android:onClick="read_users_info"
+=======
+>>>>>>> BACKUP_BRANCH
         android:text="@string/login"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@color/dark_font"
@@ -130,4 +133,8 @@
         app:layout_constraintTop_toBottomOf="@+id/signupPassword"
         tools:ignore="SpeakableTextPresentCheck" />
 
+<<<<<<< HEAD
 </androidx.constraintlayout.widget.ConstraintLayout>
+=======
+</androidx.constraintlayout.widget.ConstraintLayout>
+>>>>>>> BACKUP_BRANCH

@@ -63,6 +63,7 @@ public class User {
     }
 
 
+<<<<<<< HEAD
     private boolean isValueAtLeastOne(String value) {
         return value.length() > 0;
     }
@@ -78,6 +79,8 @@ public class User {
         }
     }
 
+=======
+>>>>>>> BACKUP_BRANCH
     private void setUserName(String user_name) {
         this.UserName = user_name;
     }

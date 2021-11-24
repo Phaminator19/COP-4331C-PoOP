@@ -4,11 +4,30 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/minhb/Desktop/ProcessOfObject/Project_1/app/src/main/res/layout-w1240dp/activity_login2.xml" value="0.3333333333333333" />
+<<<<<<< HEAD
         <entry key="..\:/Users/minhb/Desktop/ProcessOfObject/Project_1/app/src/main/res/layout-w936dp/activity_login2.xml" value="0.34250585480093676" />
         <entry key="..\:/Users/minhb/Desktop/ProcessOfObject/Project_1/app/src/main/res/layout/activity_login.xml" value="0.3046875" />
         <entry key="..\:/Users/minhb/Desktop/ProcessOfObject/Project_1/app/src/main/res/layout/activity_login2.xml" value="0.25" />
         <entry key="..\:/Users/minhb/Desktop/ProcessOfObject/Project_1/app/src/main/res/layout/activity_main.xml" value="0.3046875" />
         <entry key="..\:/Users/minhb/Desktop/ProcessOfObject/Project_1/app/src/main/res/layout/activity_signup.xml" value="0.3046875" />
+=======
+        <entry key="..\:/Users/minhb/Desktop/ProcessOfObject/Project_1/app/src/main/res/layout-w1240dp/activity_login_2.xml" value="0.19578313253012047" />
+        <entry key="..\:/Users/minhb/Desktop/ProcessOfObject/Project_1/app/src/main/res/layout-w936dp/activity_login2.xml" value="0.34250585480093676" />
+        <entry key="..\:/Users/minhb/Desktop/ProcessOfObject/Project_1/app/src/main/res/layout/activity_login.xml" value="0.3046875" />
+        <entry key="..\:/Users/minhb/Desktop/ProcessOfObject/Project_1/app/src/main/res/layout/activity_login2.xml" value="0.25" />
+        <entry key="..\:/Users/minhb/Desktop/ProcessOfObject/Project_1/app/src/main/res/layout/activity_login_2.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/minhb/Desktop/ProcessOfObject/Project_1/app/src/main/res/layout/activity_main.xml" value="0.3046875" />
+        <entry key="..\:/Users/minhb/Desktop/ProcessOfObject/Project_1/app/src/main/res/layout/activity_signup.xml" value="0.3046875" />
+        <entry key="..\:/Users/minhb/Desktop/back_2/Project_1/app/src/main/res/layout/activity_account_settings.xml" value="0.2708333333333333" />
+        <entry key="..\:/Users/minhb/Desktop/back_2/Project_1/app/src/main/res/layout/activity_event.xml" value="0.2708333333333333" />
+        <entry key="..\:/Users/minhb/Desktop/back_2/Project_1/app/src/main/res/layout/activity_group_settings.xml" value="0.2708333333333333" />
+        <entry key="..\:/Users/minhb/Desktop/back_2/Project_1/app/src/main/res/layout/activity_groupchat.xml" value="0.2708333333333333" />
+        <entry key="..\:/Users/minhb/Desktop/back_2/Project_1/app/src/main/res/layout/activity_login.xml" value="0.2708333333333333" />
+        <entry key="..\:/Users/minhb/Desktop/back_2/Project_1/app/src/main/res/layout/activity_login_2.xml" value="0.2708333333333333" />
+        <entry key="..\:/Users/minhb/Desktop/back_2/Project_1/app/src/main/res/layout/activity_set_status.xml" value="0.2708333333333333" />
+        <entry key="..\:/Users/minhb/Desktop/back_2/Project_1/app/src/main/res/layout/activity_user_settings.xml" value="0.2708333333333333" />
+        <entry key="..\:/Users/minhb/Desktop/back_2/Project_1/app/src/main/res/layout/app_bar.xml" value="0.2708333333333333" />
+>>>>>>> BACKUP_BRANCH
         <entry key="..\:/Users/minhb/Documents/Project_1/Project_1/app/src/main/res/layout-w1240dp/activity_login_2.xml" value="0.140234375" />
         <entry key="..\:/Users/minhb/Documents/Project_1/Project_1/app/src/main/res/layout/activity_login2.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/minhb/Documents/Project_1/Project_1/app/src/main/res/layout/activity_login_2.xml" value="0.2" />

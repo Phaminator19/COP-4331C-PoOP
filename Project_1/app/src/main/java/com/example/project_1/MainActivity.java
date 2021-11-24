@@ -13,16 +13,32 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+<<<<<<< HEAD
 
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+=======
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+
+public class MainActivity extends AppCompatActivity {
+>>>>>>> BACKUP_BRANCH
     Button lbtn;
     Button sbtn;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+<<<<<<< HEAD
 
+=======
+>>>>>>> BACKUP_BRANCH
     }
 
     public void launchLoginPage(View v) {
@@ -46,10 +62,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         });
     }
 
+<<<<<<< HEAD
     @Override
     public void onClick(View v) {
 
     }
+=======
+>>>>>>> BACKUP_BRANCH
 }
 
 
