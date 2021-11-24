@@ -5,8 +5,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.content.Intent;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
@@ -17,6 +23,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+    }
+
+    public void launchLoginPage(View v) {
+        //launch the login page activity
         lbtn = (Button) findViewById(R.id.loginStart);
         lbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -24,7 +34,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(new Intent(MainActivity.this, Login.class));
             }
         });
+    }
 
+    public void launchRegisterPage(View v) {
         sbtn = (Button) findViewById(R.id.signupStart);
         sbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -32,18 +44,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(new Intent(MainActivity.this, Signup.class));
             }
         });
-    }
-
-    public void launchLoginPage(View v) {
-
-        //launch the login page activity
-        Intent i = new Intent(this, Login.class);
-        startActivity(i);
-    }
-
-    public void launchRegisterPage(View v) {
-        Intent i = new Intent(this, Signup.class);
-        startActivity(i);
     }
 
     @Override

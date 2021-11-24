@@ -1,8 +1,12 @@
 package com.example.project_1;
 
+import android.widget.Toast;
+
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.nio.charset.StandardCharsets;
@@ -16,40 +20,39 @@ public class User_Database {
     public User_Database() {
         userList = new ArrayList<>();
     }
-
-
-    public void updateDatabase(User newUser) {
-//        File data = new File("users.db");
-//        PrintWriter fs;
-//        try {
-//            fs = new PrintWriter(data);
-//        } catch (IOException e) {
-//            System.out.println("IO Exception");
-//            return;
-//        }
-//        fs.flush();
-        userList.add(newUser);
+    public void updateDatabase(User user) {
+        userList.add(user);
     }
 
-    public Object loadDataBase(PrintWriter file, User new_user) throws IOException {
-//        File data = new File(filename);
-//        Scanner reader = new Scanner(data);
+    public void loadDataBase(User user, String filename) throws IOException {
 
-            String name = new_user.getUserName();
-            String email = new_user.getEmailAddress();
-            String pass = new_user.getPassword();
+        //Toast.makeText(Signup.this, file.getAbsolutePath() + " is created",Toast.LENGTH_SHORT).show();
+        try {
+            File file = new File(filename);
+            if(file.createNewFile()) {
+                System.out.println("File is created at " + file.getAbsolutePath());
+            }
+            else {
+                System.out.println("...");
+            }
+            FileWriter fr = new FileWriter(file, true);
+            BufferedWriter br = new BufferedWriter(fr);
+            PrintWriter pr = new PrintWriter(br);
 
-            User created_user = new User("Placeholder", "Placeholder@aol.com", "wtf555665532");
-            created_user.updateUser(name, email, pass);
+            pr.println(user.getUserName());
+            pr.println(user.getPassword());
+            pr.close();
+            br.close();
+            fr.close();
+            updateDatabase(user);
 
-            updateDatabase(created_user);
-
-            file.println("Username: " + userList.get(0).getUserName());
-            file.println("password: " + userList.get(0).getPassword());
-
-            userList.clear();
-            return file;
+        } catch (FileNotFoundException e) {
+            throw new FileNotFoundException("An error has occurred. User database has error.");
+        } catch (IOException error) {
+            throw new IOException("An error has occurred. User database has error.");
+        }
 
     }
 
 }
+

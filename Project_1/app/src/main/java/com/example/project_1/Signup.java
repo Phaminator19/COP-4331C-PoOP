@@ -3,35 +3,27 @@ package com.example.project_1;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
 import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
-import android.os.Bundle;
-import android.view.View;
+import java.util.HashMap;
+
 import android.widget.Button;
-import android.widget.EditText;
 import android.content.Intent;
-
-import java.io.BufferedWriter;
-
-import java.io.FileInputStream;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
 
 
 public class Signup extends AppCompatActivity{
     Button registerButton;
+    User_Database new_user_database;
+    HashMap<String, String> userMap;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
@@ -85,25 +77,49 @@ public class Signup extends AppCompatActivity{
                 }
 
                 if(pass.length() < password_length) {
-                    password.setError("Password doesn't meet the require length of at least 10 characters");
+                    password.setError("Password doesn't meet the required length of at least 10 characters");
                     password.requestFocus();
                     return;
                 }
 
                 User new_user = new User(name, email, pass);
-
-                try (FileWriter textfile = new FileWriter("users.db", true); BufferedWriter user_db = new BufferedWriter(textfile);
-                     PrintWriter out = new PrintWriter(user_db)) {
-                    new_User_database.loadDataBase(out, new_user);
-
-                } catch (IOException e) {
-                    Toast.makeText(Signup.this, "failed to register a new user", Toast.LENGTH_LONG).show();
-                }
-
+                CreateAFile(new_user);
                 startActivity(new Intent(Signup.this, MainActivity.class));
             }
         });
+    }
+    public void CreateAFile(User user) {
 
+        //Toast.makeText(Signup.this, file.getAbsolutePath() + " is created",Toast.LENGTH_SHORT).show();
+        try {
+            String filename = "user.db";
+            new_user_database.loadDataBase(user, filename);
+//            File file = new File(filename);
+//            if(file.createNewFile()) {
+//                System.out.println("File is created at " + file.getAbsolutePath());
+//            }
+//            else {
+//                System.out.println("...");
+//            }
+//            if(file.createNewFile()) {
+//                System.out.println("File is created at " + file.getAbsolutePath());
+//            }
+//            else {
+//                System.out.println("...");
+//            }
+//            FileWriter fr = new FileWriter(file, true);
+//            BufferedWriter br = new BufferedWriter(fr);
+//            PrintWriter pr = new PrintWriter(br);
+//
+//            pr.println(user.getUserName());
+//            pr.println(user.getPassword());
+//            pr.close();
+//            br.close();
+//            fr.close();
+
+        } catch (IOException error) {
+            Toast.makeText(Signup.this, "Failed to make a user. An error occurred.", Toast.LENGTH_LONG).show();
+        }
     }
 
-    }
+}
