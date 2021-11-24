@@ -8,6 +8,7 @@
     <string name="todo">TODO</string>
     <string name="type_message">type message...</string>
     <string name="send">send</string>
+    <string name="back">back</string>
     <string-array name="user_types">
         <item>Standard User</item>
         <item>Moderator</item>
