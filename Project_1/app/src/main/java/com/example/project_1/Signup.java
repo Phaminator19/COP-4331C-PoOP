@@ -60,7 +60,7 @@ public class Signup extends AppCompatActivity{
 
                 EditText user_name = findViewById(R.id.signupUsername);
                 EditText email_address = findViewById(R.id.signupEmail);
-                EditText password = findViewById(R.id.loginPassword);
+                EditText password = findViewById(R.id.signupPassword);
 
                 String name = user_name.getText().toString().trim();
                 String email = email_address.getText().toString().trim();
