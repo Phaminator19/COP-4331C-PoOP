@@ -1,5 +1,9 @@
 package com.example.project_1;
 
+<<<<<<< HEAD
+import androidx.appcompat.app.AppCompatActivity;
+import android.os.Bundle;
+=======
 import static android.content.ContentValues.TAG;
 
 import androidx.annotation.NonNull;
@@ -7,18 +11,30 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.util.Log;
+>>>>>>> BACKUP_BRANCH
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+<<<<<<< HEAD
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+=======
 import java.io.File;
 import java.io.IOException;
+>>>>>>> BACKUP_BRANCH
 import java.util.HashMap;
 
 import android.widget.Button;
 import android.content.Intent;
+<<<<<<< HEAD
+=======
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -26,10 +42,20 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+>>>>>>> BACKUP_BRANCH
 
 
 public class Signup extends AppCompatActivity{
     Button registerButton;
+<<<<<<< HEAD
+    User_Database new_user_database;
+    HashMap<String, String> userMap;
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_signup);
+
+
+=======
     private FirebaseAuth mAuth;
     private DatabaseReference reference;
     private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance("https://groupmatchproject-default-rtdb.firebaseio.com/");
@@ -49,6 +75,7 @@ public class Signup extends AppCompatActivity{
                 startActivity(new Intent(Signup.this, MainActivity.class));
             }
         });
+>>>>>>> BACKUP_BRANCH
 
         // this populates the drop down menu with the three user types - Estefania
         Spinner userType = (Spinner) findViewById(R.id.userType);
@@ -59,8 +86,19 @@ public class Signup extends AppCompatActivity{
     }
 
     //this takes in the user name, email, and password - Quang
+<<<<<<< HEAD
+    public void read_users_info (View v) throws IOException {
+        User_Database new_User_database = new User_Database();
+
+        registerButton = (Button)findViewById(R.id.signup);
+        //click the register button - Quang
+        registerButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+=======
     public void read_users_info (){
 
+>>>>>>> BACKUP_BRANCH
 
                 int password_length = 10;
 
@@ -96,6 +134,47 @@ public class Signup extends AppCompatActivity{
                     return;
                 }
 
+<<<<<<< HEAD
+                User new_user = new User(name, email, pass);
+                CreateAFile(new_user);
+                startActivity(new Intent(Signup.this, MainActivity.class));
+            }
+        });
+    }
+    public void CreateAFile(User user) {
+
+        //Toast.makeText(Signup.this, file.getAbsolutePath() + " is created",Toast.LENGTH_SHORT).show();
+        try {
+            String filename = "user.db";
+            new_user_database.loadDataBase(user, filename);
+//            File file = new File(filename);
+//            if(file.createNewFile()) {
+//                System.out.println("File is created at " + file.getAbsolutePath());
+//            }
+//            else {
+//                System.out.println("...");
+//            }
+//            if(file.createNewFile()) {
+//                System.out.println("File is created at " + file.getAbsolutePath());
+//            }
+//            else {
+//                System.out.println("...");
+//            }
+//            FileWriter fr = new FileWriter(file, true);
+//            BufferedWriter br = new BufferedWriter(fr);
+//            PrintWriter pr = new PrintWriter(br);
+//
+//            pr.println(user.getUserName());
+//            pr.println(user.getPassword());
+//            pr.close();
+//            br.close();
+//            fr.close();
+
+        } catch (IOException error) {
+            Toast.makeText(Signup.this, "Failed to make a user. An error occurred.", Toast.LENGTH_LONG).show();
+        }
+    }
+=======
                 mAuth.createUserWithEmailAndPassword(email, pass).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
@@ -153,5 +232,6 @@ public class Signup extends AppCompatActivity{
 //            Toast.makeText(Signup.this, "Failed to make a user. An error occurred.", Toast.LENGTH_LONG).show();
 //        }
 //    }
+>>>>>>> BACKUP_BRANCH
 
 }

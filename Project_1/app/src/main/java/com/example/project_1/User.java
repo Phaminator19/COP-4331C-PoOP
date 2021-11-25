@@ -63,6 +63,24 @@ public class User {
     }
 
 
+<<<<<<< HEAD
+    private boolean isValueAtLeastOne(String value) {
+        return value.length() > 0;
+    }
+
+
+    private boolean isPasswordAtLeast10Characters(String password) {
+        return password.length() >= 10;
+    }
+
+    static class InvalidValueException extends IllegalArgumentException {
+        public InvalidValueException(String msg) {
+            super(msg);
+        }
+    }
+
+=======
+>>>>>>> BACKUP_BRANCH
     private void setUserName(String user_name) {
         this.UserName = user_name;
     }

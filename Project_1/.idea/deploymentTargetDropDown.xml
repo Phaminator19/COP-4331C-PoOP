@@ -7,11 +7,19 @@
         <deviceKey>
           <Key>
             <type value="VIRTUAL_DEVICE_PATH" />
+<<<<<<< HEAD
+            <value value="C:\Users\minhb\.android\avd\Pixel_4_XL_API.avd" />
+=======
             <value value="C:\Users\minhb\.android\avd\Pixel_3_XL_API_28.avd" />
+>>>>>>> BACKUP_BRANCH
           </Key>
         </deviceKey>
       </Target>
     </targetSelectedWithDropDown>
+<<<<<<< HEAD
+    <timeTargetWasSelectedWithDropDown value="2021-11-23T03:54:04.126977800Z" />
+=======
     <timeTargetWasSelectedWithDropDown value="2021-11-24T15:41:38.363409500Z" />
+>>>>>>> BACKUP_BRANCH
   </component>
 </project>
