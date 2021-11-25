@@ -26,6 +26,9 @@
         <activity android:name=".GroupCreation"
             android:label="Group Creation"
             android:parentActivityName=".UserProfile"/>
+        <activity android:name=".Chat"
+            android:label= "Group Chat"
+            android:parentActivityName=".UserProfile"/>
         <activity
             android:name=".MainActivity"
             android:exported="true">

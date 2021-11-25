@@ -38,7 +38,8 @@ public class UserProfile extends AppCompatActivity {
         searchSettingsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Search();
+                //Search();
+                GroupChat();
             }
         });
 
@@ -78,10 +79,15 @@ public class UserProfile extends AppCompatActivity {
         startActivity(i1);
     }
 
-    public void Search() {
-//        Intent i2 = new Intent(this, Search.class);
-//        startActivity(i2);
+    public void GroupChat() {
+        Intent i2 = new Intent(this, Chat.class);
+        startActivity(i2);
     }
+
+//    public void Search() {
+//        Intent i4 = new Intent(this, Search.class);
+//        startActivity(i4);
+//    }
 
     public void GroupCreation() {
         Intent i3 = new Intent(this, GroupCreation.class);

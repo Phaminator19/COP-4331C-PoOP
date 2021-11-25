@@ -63,7 +63,7 @@ public class Group {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for(DataSnapshot ds : snapshot.getChildren()) {
                     Map<String, Object> map = new HashMap<>();
-                    map.put("Name", new_name);
+                    map.put("GroupName", new_name);
                     map.put("Interest", Interest);
                     map.put("Bios", bios);
                     ds.getRef().updateChildren(map);

@@ -72,16 +72,16 @@ public class Login extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
-//
-                    if(mAuth.getCurrentUser() != null) {
-                        Log.d(TAG, "login is successful");
-                        startActivity(new Intent(Login.this, UserProfile.class));
-                        finish();
-                    }
+                    if (mAuth.getCurrentUser().isEmailVerified()) {
+                            Log.d(TAG, "login is successful");
+                            startActivity(new Intent(Login.this, UserProfile.class));
+                            finish();
+                    }else {
+                        Log.e(TAG, "login isn't successful");
+                        Toast.makeText(Login.this, "Failed to login. The email isn't verified!", Toast.LENGTH_LONG).show();
                 }
-                else {
-                    Log.e(TAG, "login isn't successful");
-                    Toast.makeText(Login.this, "Failed to login. Please check your credentials", Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(Login.this, "Failed to login. Credential isn't correct!", Toast.LENGTH_LONG).show();
                 }
             }
         });

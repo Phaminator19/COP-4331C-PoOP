@@ -21,6 +21,7 @@ import android.widget.Button;
 import android.content.Intent;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -33,12 +34,12 @@ public class Signup extends AppCompatActivity{
     private FirebaseAuth mAuth;
     private DatabaseReference reference;
     private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance("https://groupmatchproject-default-rtdb.firebaseio.com/");
+    private FirebaseAuth.AuthStateListener mAuthListener;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
         mAuth = FirebaseAuth.getInstance();
-
         registerButton = (Button)findViewById(R.id.signup);
         //click the register button - Quang
         registerButton.setOnClickListener(new View.OnClickListener() {
@@ -104,9 +105,17 @@ public class Signup extends AppCompatActivity{
                     userMap.put("Email", email);
                     userMap.put("Password", pass);
                     reference = firebaseDatabase.getReference();
+                    System.out.println("did it get here?");
+
                     reference.child("User").child(mAuth.getUid()).setValue(userMap);
-                    Toast.makeText(Signup.this, "A user is created", Toast.LENGTH_LONG).show();
-                    startActivity(new Intent(Signup.this, MainActivity.class));
+
+                    mAuth.getCurrentUser().sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            Toast.makeText(Signup.this, "A user is created", Toast.LENGTH_LONG).show();
+                            startActivity(new Intent(Signup.this, MainActivity.class));
+                        }
+                    });
                 }
                 else {
                     Log.w(TAG, "createUserWithEmail:failure", task.getException());
