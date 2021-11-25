@@ -45,8 +45,6 @@ public class Signup extends AppCompatActivity{
             @Override
             public void onClick(View v) {
                 read_users_info();
-                Toast.makeText(Signup.this, "A user is created", Toast.LENGTH_LONG).show();
-                startActivity(new Intent(Signup.this, MainActivity.class));
             }
         });
 
@@ -107,7 +105,8 @@ public class Signup extends AppCompatActivity{
                     userMap.put("Password", pass);
                     reference = firebaseDatabase.getReference();
                     reference.child("User").child(mAuth.getUid()).setValue(userMap);
-
+                    Toast.makeText(Signup.this, "A user is created", Toast.LENGTH_LONG).show();
+                    startActivity(new Intent(Signup.this, MainActivity.class));
                 }
                 else {
                     Log.w(TAG, "createUserWithEmail:failure", task.getException());
@@ -118,40 +117,4 @@ public class Signup extends AppCompatActivity{
 
 
     }
-
-//    public void CreateAFile(User user) {
-//        boolean test = false;
-//        //Toast.makeText(Signup.this, file.getAbsolutePath() + " is created",Toast.LENGTH_SHORT).show();
-//        try {
-//            String filename = "user.txt";
-//            new_user_database.writeDataBase(user, filename,Signup.this);
-//
-////            File file = new File(filename);
-////            if(file.createNewFile()) {
-////                System.out.println("File is created at " + file.getAbsolutePath());
-////            }
-////            else {
-////                System.out.println("...");
-////            }
-////            if(file.createNewFile()) {
-////                System.out.println("File is created at " + file.getAbsolutePath());
-////            }
-////            else {
-////                System.out.println("...");
-////            }
-////            FileWriter fr = new FileWriter(file, true);
-////            BufferedWriter br = new BufferedWriter(fr);
-////            PrintWriter pr = new PrintWriter(br);
-////
-////            pr.println(user.getUserName());
-////            pr.println(user.getPassword());
-////            pr.close();
-////            br.close();
-////            fr.close();
-//
-//        } catch (IOException error) {
-//            Toast.makeText(Signup.this, "Failed to make a user. An error occurred.", Toast.LENGTH_LONG).show();
-//        }
-//    }
-
 }

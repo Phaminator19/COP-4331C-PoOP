@@ -31,7 +31,7 @@ public class Login extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login_2);
+        setContentView(R.layout.activity_login);
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -48,12 +48,12 @@ public class Login extends AppCompatActivity {
 
     public void handlingLogin() {
         //fix this
-        email_address = (EditText) findViewById(R.id.loginEmail);
+        email_address = (EditText) findViewById(R.id.loginEmailAddress);
 
 
         pass_word = (EditText) findViewById(R.id.loginpassword);
 
-        String email = this.email_address.getText().toString().trim();
+        String email = email_address.getText().toString().trim();
         String pass = pass_word.getText().toString().trim();
 
         if (pass.isEmpty()) {
@@ -72,11 +72,11 @@ public class Login extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
-//                    startActivity(new Intent(Login.this, place_holder.class));
+//
                     if(mAuth.getCurrentUser() != null) {
                         Log.d(TAG, "login is successful");
-                        Toast.makeText(Login.this, "Successful Login", Toast.LENGTH_LONG).show();
-                        //finish();
+                        startActivity(new Intent(Login.this, UserProfile.class));
+                        finish();
                     }
                 }
                 else {

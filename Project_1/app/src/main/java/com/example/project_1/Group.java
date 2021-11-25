@@ -24,46 +24,48 @@ public class Group {
     HashMap<String, String> groupMap;
     private DatabaseReference reference;
     private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance("https://groupmatchproject-default-rtdb.firebaseio.com");
-    private String GroupName;
-    private String GroupInterest;
-    private String GroupBios;
 
     public Group() {
         groupMap = new HashMap<>();
     }
+//
+//    private void setGroupName (String GroupName) {
+//         this.GroupName = GroupName;
+//    }
+//
+//    public String getGroupName () {
+//        return GroupName;
+//    }
+//
+//    public String getGroupInterest() {
+//        return GroupInterest;
+//    }
+//
+//    private void setGroupInterest(String groupInterest) {
+//        GroupInterest = groupInterest;
+//    }
+//
+//    public String getGroupBios() {
+//        return GroupBios;
+//    }
+//
+//    private void setGroupBios(String groupBios) {
+//        GroupBios = groupBios;
+//    }
+    public void addTheCreatedGroup(DatabaseReference ref, String new_name, String Interest, String bios) {
 
-    private void setGroupName (String GroupName) {
-         this.GroupName = GroupName;
     }
 
-    public String getGroupName () {
-        return GroupName;
-    }
-
-    public String getGroupInterest() {
-        return GroupInterest;
-    }
-
-    private void setGroupInterest(String groupInterest) {
-        GroupInterest = groupInterest;
-    }
-
-    public String getGroupBios() {
-        return GroupBios;
-    }
-
-    private void setGroupBios(String groupBios) {
-        GroupBios = groupBios;
-    }
-
-    public void editTheGroupName(DatabaseReference ref, String group_name, String new_name) {
-       Query groupQuery = ref.orderByChild("Group").equalTo(group_name);
-        ValueEventListener valueEventListener = new ValueEventListener() {
+    public void editTheGroupName(DatabaseReference ref, String id, String new_name, String Interest, String bios) {
+       Query groupQuery = ref.orderByChild("group-ID").equalTo(id);
+       ValueEventListener valueEventListener = new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for(DataSnapshot ds : snapshot.getChildren()) {
                     Map<String, Object> map = new HashMap<>();
-                    map.put("Group Name", new_name);
+                    map.put("Name", new_name);
+                    map.put("Interest", Interest);
+                    map.put("Bios", bios);
                     ds.getRef().updateChildren(map);
                 }
             }
@@ -75,6 +77,28 @@ public class Group {
         };
         groupQuery.addListenerForSingleValueEvent(valueEventListener);
     }
+
+//    public void editTheGroupInterest(DatabaseReference ref, String id, String interest) {
+//        Query groupQuery = ref.orderByChild(id).equalTo("Group");
+//        ValueEventListener valueEventListener = new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot snapshot) {
+//                for(DataSnapshot ds : snapshot.getChildren()) {
+//                    Map<String, Object> map = new HashMap<>();
+//                    map.put("Interest", interest);
+//                    ds.getRef().updateChildren(map);
+//                }
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError error) {
+//                Log.d(TAG, error.getMessage());
+//            }
+//        };
+//        groupQuery.addListenerForSingleValueEvent(valueEventListener);
+//    }
+
+
 
 
 }

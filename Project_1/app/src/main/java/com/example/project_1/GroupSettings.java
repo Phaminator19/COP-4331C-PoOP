@@ -19,10 +19,12 @@ public class GroupSettings extends AppCompatActivity {
     private DatabaseReference reference;
     private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance("https://groupmatchproject-default-rtdb.firebaseio.com");
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_groupchat);
+        setContentView(R.layout.activity_group_settings);
+
         GroupSave = (Button) findViewById(R.id.editSaveGroup);
         GroupSave.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,9 +55,28 @@ public class GroupSettings extends AppCompatActivity {
         String interest = group_interest.getText().toString().trim();
         String bios = group_bios.getText().toString().trim();
 
+//        String groupID = getGroupID.push().getKey();
         reference = firebaseDatabase.getReference();
-        g.editTheGroupName(reference, ,);
+        DatabaseReference getGroupRef = reference.child("Group");
+        String groupID = getGroupRef.push().getKey();
 
+        if(name.isEmpty()) {
+            group_name.setError("Group name is required");
+            group_name.requestFocus();
+            return;
+        }
+        if(interest.isEmpty()) {
+            group_interest.setError("Group interest is required");
+            group_interest.requestFocus();
+            return;
+        }
+        if(bios.isEmpty()) {
+            group_bios.setError("Bios can't be empty");
+            group_bios.requestFocus();
+            return;
+        }
+
+        g.editTheGroupName(getGroupRef, groupID, name, interest, bios);
     }
 
     public void re_editGroup() {
