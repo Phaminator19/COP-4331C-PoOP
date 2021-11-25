@@ -106,7 +106,6 @@
         android:layout_marginTop="140dp"
         android:layout_weight="0"
         android:fontFamily="@font/lancelot"
-        android:onclick="onClick"
         android:text="edit"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@color/dark_font"
@@ -136,7 +135,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.23"
-        app:srcCompat="@drawable/tempIcon" />
+        app:srcCompat="@drawable/pinclipart_com_birthday_clipart_for_facebook_1814767" />
 
     <EditText
         android:id="@+id/editPronouns"

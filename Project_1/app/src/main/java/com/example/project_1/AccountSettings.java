@@ -19,13 +19,13 @@ public class AccountSettings extends AppCompatActivity {
         String UserCity = i.getStringExtra("User City");
         String UserJob = i.getStringExtra("User Job");
 
-        ((TextView)findViewById(R.id.Age)).setText(UserAge);
-        Toast.makeText(this, "user age saved: " + UserAge, Toast.LENGTH_LONG).show();
-        ((TextView)findViewById(R.id.Birthday)).setText(UserBirthday);
-        Toast.makeText(this, "user birthday saved: " + UserBirthday, Toast.LENGTH_LONG).show();
-        ((TextView)findViewById(R.id.City)).setText(UserCity);
-        Toast.makeText(this, "user city saved: " + UserCity, Toast.LENGTH_LONG).show();
-        ((TextView)findViewById(R.id.Job)).setText(UserJob);
-        Toast.makeText(this, "user job saved: " + UserJob, Toast.LENGTH_LONG).show();
+//        ((TextView)findViewById(R.id.Age)).setText(UserAge);
+//        Toast.makeText(this, "user age saved: " + UserAge, Toast.LENGTH_LONG).show();
+//        ((TextView)findViewById(R.id.Birthday)).setText(UserBirthday);
+//        Toast.makeText(this, "user birthday saved: " + UserBirthday, Toast.LENGTH_LONG).show();
+//        ((TextView)findViewById(R.id.City)).setText(UserCity);
+//        Toast.makeText(this, "user city saved: " + UserCity, Toast.LENGTH_LONG).show();
+//        ((TextView)findViewById(R.id.Job)).setText(UserJob);
+//        Toast.makeText(this, "user job saved: " + UserJob, Toast.LENGTH_LONG).show();
     }
 }
