@@ -29,7 +29,7 @@ public class Login extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login_2);
+        setContentView(R.layout.activity_login);
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -37,6 +37,7 @@ public class Login extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 handlingLogin();
             }
         });
@@ -70,9 +71,10 @@ public class Login extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
-//                    startActivity(new Intent(Login.this, place_holder.class));
+
                     if(mAuth.getCurrentUser() != null) {
                         Log.d(TAG, "login is successful");
+                        //startActivity(new Intent(Login.this, place_holder.class));
                         Toast.makeText(Login.this, "Successful Login", Toast.LENGTH_LONG).show();
                         //finish();
                     }
