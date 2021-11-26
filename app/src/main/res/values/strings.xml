@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">A G O R A</string>
+    <string name="login">login</string>
+    <string name="signup">sign up</string>
+    <string name="welcome">welcome to</string>
+    <string name="returning_user">returning user?</string>
+    <string name="new_user">new user?</string>
+    <string name="todo">TODO</string>
+    <string name="password">Enter Password</string>
+    <string name="username">Enter Username</string>
+    <string name="email">Enter Email</string>
+    <string name="type_message">type message...</string>
+    <string name="send">send</string>
+    <string name="back">back</string>
+    <string name="agora_logo">agora logo</string>
+    <string name="welcome_back_to">welcome back to</string>
+    <string-array name="user_types">
+        <item>Standard User</item>
+        <item>Moderator</item>
+        <item>Administrator</item>
+    </string-array>
+    <string name="title_activity_test">test_activity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+</resources>
