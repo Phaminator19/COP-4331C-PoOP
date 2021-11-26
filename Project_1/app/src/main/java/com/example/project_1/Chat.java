@@ -65,11 +65,12 @@ public class Chat extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_groupchat);
 
-        currGroupName = getIntent().getExtras().get("GroupName").toString();
+        //currGroupName = getIntent().getExtras().get("Group Name").toString();
         chatAuth = FirebaseAuth.getInstance();
         currUserId = chatAuth.getCurrentUser().getUid();
         userRef = FirebaseDatabase.getInstance().getReference().child("User");
-        groupNameRef = FirebaseDatabase.getInstance().getReference().child("Group").child("currGroupName");
+        groupNameRef = FirebaseDatabase.getInstance().getReference().child("Group");
+        String groupID = groupNameRef.getKey();
 
         Toast.makeText(Chat.this,"",Toast.LENGTH_SHORT).show();
 

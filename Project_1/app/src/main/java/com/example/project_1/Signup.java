@@ -100,14 +100,16 @@ public class Signup extends AppCompatActivity{
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
                     Log.d(TAG, "createUserWithEmail:success");
+
                     HashMap<String, String> userMap = new HashMap<>();
                     userMap.put("Username", name);
                     userMap.put("Email", email);
                     userMap.put("Password", pass);
-                    reference = firebaseDatabase.getReference();
-                    System.out.println("did it get here?");
-
-                    reference.child("User").child(mAuth.getUid()).setValue(userMap);
+                    reference = firebaseDatabase.getReference().child("User");
+                    DatabaseReference getUser = firebaseDatabase.getReference("User");
+                    String userID = getUser.push().getKey();
+                    userMap.put("user-id", userID);
+                    reference.child(userID).setValue(userMap);
 
                     mAuth.getCurrentUser().sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override

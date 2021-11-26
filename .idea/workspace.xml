@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
-  </component>
   <component name="ChangeListManager">
     <list default="true" id="4fb63f96-da2d-4b31-bdce-07a27248cdcc" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,8 +29,5 @@
       <updated>1637639102565</updated>
     </task>
     <servers />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

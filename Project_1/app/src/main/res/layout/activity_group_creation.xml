@@ -25,17 +25,31 @@
         app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.062" />
+        app:layout_constraintVertical_bias="0.062" /><![CDATA[
+
+
+
+    //app:srcCompat="@drawable/tempIcon" />
+
+
+
+
+
+
+
+
+
+    ]]>
 
     <Button
-        android:id="@+id/editGroupIcon"
-        android:layout_width="100dp"
-        android:layout_height="56dp"
+        android:id="@+id/cancelTask"
+        android:layout_width="145dp"
+        android:layout_height="58dp"
         android:layout_gravity="center"
         android:layout_marginTop="140dp"
         android:layout_weight="0"
         android:fontFamily="@font/lancelot"
-        android:text="Edit"
+        android:text="Cancel"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@color/dark_font"
         android:textSize="20sp"
@@ -43,33 +57,14 @@
         app:cornerRadius="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.125"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.218" />
-
-    <ImageView
-        android:id="@+id/groupIcon"
-        android:layout_width="100dp"
-        android:layout_height="102dp"
-        android:layout_weight="10"
-        android:adjustViewBounds="true"
-        android:cropToPadding="true"
-        android:padding="1dp"
-        android:scaleType="centerCrop"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.125"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.23"/>
-    //app:srcCompat="@drawable/tempIcon" />
+        app:layout_constraintVertical_bias="0.831" />
 
     <EditText
-        android:id="@+id/editGroupName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/createGroupName"
+        android:layout_width="374dp"
+        android:layout_height="48dp"
         android:autofillHints="username"
         android:ems="10"
         android:fontFamily="@font/lancelot"
@@ -79,15 +74,15 @@
         android:textColor="@color/dark_font"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.826"
+        app:layout_constraintHorizontal_bias="0.486"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.21" />
+        app:layout_constraintVertical_bias="0.209" />
 
     <EditText
-        android:id="@+id/editGroupInterest"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/createGroupInterest"
+        android:layout_width="378dp"
+        android:layout_height="48dp"
         android:autofillHints="pronouns"
         android:ems="10"
         android:fontFamily="@font/lancelot"
@@ -97,15 +92,15 @@
         android:textColor="@color/dark_font"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.826"
+        app:layout_constraintHorizontal_bias="0.515"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.349" />
+        app:layout_constraintVertical_bias="0.346" />
 
     <EditText
-        android:id="@+id/editGroupBio"
-        android:layout_width="337dp"
-        android:layout_height="110dp"
+        android:id="@+id/createGroupBios"
+        android:layout_width="370dp"
+        android:layout_height="107dp"
         android:ems="10"
         android:fontFamily="@font/lancelot"
         android:gravity="start|top"
@@ -121,13 +116,13 @@
         app:layout_constraintVertical_bias="0.529" />
 
     <Button
-        android:id="@+id/editSaveGroup"
+        android:id="@+id/createGroup"
         android:layout_width="221dp"
-        android:layout_height="48dp"
+        android:layout_height="71dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:fontFamily="@font/lancelot"
-        android:text="save changes"
+        android:text="Create Group"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@color/dark_font"
         android:textSize="20sp"
@@ -137,34 +132,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.951"
+        app:layout_constraintVertical_bias="0.705"
         tools:ignore="SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/editEvents"
-        android:layout_width="160dp"
-        android:layout_height="160dp"
-        android:layout_marginEnd="116dp"
-        android:layout_marginBottom="148dp"
-        android:src="@android:drawable/ic_menu_my_calendar"
-        app:backgroundTint="#C4D6B0"
-        app:cornerRadius="30dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:ignore="SpeakableTextPresentCheck" />
-
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/lancelot"
-        android:text="edit events"
-        android:textColor="@color/dark_font"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editEvents"
-        app:layout_constraintVertical_bias="0.156" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
