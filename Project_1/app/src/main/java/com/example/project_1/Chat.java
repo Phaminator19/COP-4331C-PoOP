@@ -62,7 +62,7 @@ public class Chat extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_groupchat);
 
-        //currGroupName = getIntent().getExtras().get("Group Name").toString();
+        currGroupName = getIntent().getExtras().get("Group Name").toString();
         chatAuth = FirebaseAuth.getInstance();
         currUserId = chatAuth.getCurrentUser().getUid();
         userRef = FirebaseDatabase.getInstance().getReference().child("User");
@@ -79,7 +79,7 @@ public class Chat extends AppCompatActivity{
             public void onClick(View v) {
                 // save the message to the database, revert editText, set scrollview to bottom - Estefania
                 saveMessage();
-                //userMessage.setText("type message...");
+                userMessage.setText("type message...");
                 scroll.fullScroll(ScrollView.FOCUS_DOWN);
             }
         });
