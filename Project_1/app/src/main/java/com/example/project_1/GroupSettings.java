@@ -1,5 +1,6 @@
 package com.example.project_1;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -23,18 +24,18 @@ public class GroupSettings extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_group_settings);
 
-        GroupSave = (Button) findViewById(R.id.saveChanges);
+        GroupSave = findViewById(R.id.saveChanges);
         GroupSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 handlingGroupSettings();
-                ((EditText)findViewById(R.id.editGroupName)).setEnabled(false);
-                ((EditText)findViewById(R.id.editInterests)).setEnabled(false);
-                ((EditText)findViewById(R.id.editBio)).setEnabled(false);
+//                ((EditText)findViewById(R.id.editGroupName)).setEnabled(false);
+//                ((EditText)findViewById(R.id.editInterests)).setEnabled(false);
+//                ((EditText)findViewById(R.id.editBio)).setEnabled(false);
             }
         });
 
-        GroupEditBut = (Button)findViewById(R.id.editIcon);
+        GroupEditBut = findViewById(R.id.editIcon);
         GroupEditBut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -56,7 +57,7 @@ public class GroupSettings extends AppCompatActivity {
 //        String groupID = getGroupID.push().getKey();
         reference = firebaseDatabase.getReference();
         DatabaseReference getGroupRef = reference.child("Group");
-        String groupID = getGroupRef.getKey();
+        String groupID = getGroupRef.push().getKey();
 
         if(name.isEmpty()) {
             group_name.setError("Group name is required");
@@ -75,12 +76,16 @@ public class GroupSettings extends AppCompatActivity {
         }
 
         g.editTheGroupName(getGroupRef, groupID, name, interest, bios);
+        Intent i = new Intent(GroupSettings.this, Chat.class);
+        i.putExtra("Group Name", name);
+        startActivity(i);
+        finish();
     }
 
     public void re_editGroup() {
-        ((EditText)findViewById(R.id.editGroupName)).setEnabled(true);
-        ((EditText)findViewById(R.id.editInterests)).setEnabled(true);
-        ((EditText)findViewById(R.id.editBio)).setEnabled(true);
+        findViewById(R.id.editGroupName).setEnabled(true);
+        findViewById(R.id.editInterests).setEnabled(true);
+        findViewById(R.id.editBio).setEnabled(true);
     }
 
 }

@@ -69,7 +69,11 @@ public class GroupCreation extends AppCompatActivity {
             }
 
             g.createTheGroup(name, interest, bios);
-            startActivity(new Intent(GroupCreation.this, Chat.class));
+            Intent i = new Intent(GroupCreation.this, Chat.class);
+
+            i.putExtra("Group Name", name);
+            startActivity(i);
+
             finish();
         }
     }

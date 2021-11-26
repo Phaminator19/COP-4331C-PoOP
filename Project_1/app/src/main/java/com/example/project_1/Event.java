@@ -9,9 +9,6 @@ public class Event extends AppCompatActivity {
     String eventdate;
     String eventtime;
 
-    public Event(){
-
-    }
     public Event(String eventitle, String eventcategory, Integer eventpicture, String eventtime, String eventdate) {
         this.eventtitle = eventtitle;
         this.eventcategory = eventcategory;

@@ -55,7 +55,7 @@ public class Group {
         groupMap.put("Group Interest", interest);
         groupMap.put("Group Bios", bios);
         groupMap.put("Group ID", groupID);
-        reference.push().setValue(groupMap);
+        reference.child(name).setValue(groupMap);
 
     }
 }

@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Project_1">
+
         <activity android:name=".Login"
             android:label="Login"
             android:parentActivityName=".MainActivity"/>
@@ -20,15 +21,15 @@
         <activity android:name=".UserSettings"
             android:label="User Settings"
             android:parentActivityName=".UserProfile"/>
-        <activity android:name=".GroupSettings"
-            android:label="Group Settings"
-            android:parentActivityName=".UserProfile"/>
-        <activity android:name=".GroupCreation"
-            android:label="Group Creation"
-            android:parentActivityName=".UserProfile"/>
         <activity android:name=".Chat"
             android:label= "Group Chat"
-            android:parentActivityName=".UserProfile"/>
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".GroupSettings"
+            android:label="Group Settings"
+            android:parentActivityName=".Chat"/>
+        <activity android:name=".GroupCreation"
+            android:label="Group Creation"
+            android:parentActivityName=".Chat"/>
         <activity
             android:name=".MainActivity"
             android:exported="true">
