@@ -56,7 +56,7 @@ public class GroupSettings extends AppCompatActivity {
 //        String groupID = getGroupID.push().getKey();
         reference = firebaseDatabase.getReference();
         DatabaseReference getGroupRef = reference.child("Group");
-        String groupID = getGroupRef.push().getKey();
+        String groupID = getGroupRef.getKey();
 
         if(name.isEmpty()) {
             group_name.setError("Group name is required");

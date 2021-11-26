@@ -35,4 +35,11 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
+    <string name="dashboard_title">Dashboard</string>
+    <string name="dashboard_heading">Find your event here</string>
+    <string name="dashboard_sub_title">489 events around you</string>
+    <string name="search_bar_hint">search for an event...</string>
+    <string name="location">Dr.Philips Center, Orlando, Florida</string>
+    <string name="desc">Thanksgiving is finally here! It\'s time to celebrate and give thanks to everyone by delicious food. Come join our class! We teach more people to cook than anywhere else in the country; our instructors aren’t simply chefs—they’re experienced teachers as well. Sign up TODAY!</string>
+
 </resources>

@@ -25,8 +25,6 @@ public class GroupCreation extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 handlingGroupCreation();
-                startActivity(new Intent(GroupCreation.this, UserProfile.class));
-                finish();
             }
         });
 
@@ -69,7 +67,10 @@ public class GroupCreation extends AppCompatActivity {
                 groupBios.requestFocus();
                 return;
             }
-                g.createTheGroup(name, interest, bios);
+
+            g.createTheGroup(name, interest, bios);
+            startActivity(new Intent(GroupCreation.this, Chat.class));
+            finish();
         }
     }
 

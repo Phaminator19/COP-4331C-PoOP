@@ -46,9 +46,6 @@ import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Iterator;
 
-
-import androidx.appcompat.app.AppCompatActivity;
-
 public class Chat extends AppCompatActivity{
 
     private Toolbar top;
@@ -82,7 +79,7 @@ public class Chat extends AppCompatActivity{
             public void onClick(View v) {
                 // save the message to the database, revert editText, set scrollview to bottom - Estefania
                 saveMessage();
-                userMessage.setText("type message...");
+                //userMessage.setText("type message...");
                 scroll.fullScroll(ScrollView.FOCUS_DOWN);
             }
         });
