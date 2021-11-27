@@ -28,23 +28,23 @@
     <ScrollView
         android:id="@+id/scrollview"
         android:layout_width="match_parent"
-        android:layout_height="613dp"
+        android:layout_height="wrap_content"
         android:layout_above="@+id/mylinearlayout"
         android:layout_below="@+id/group_chat_bar"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/bottomBar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/group_chat_bar">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/messagesDisplay"
                 android:layout_width="match_parent"
-                android:layout_height="525dp"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="2dp"
                 android:layout_marginEnd="2dp"
                 android:layout_marginRight="2dp"
@@ -53,7 +53,9 @@
                 android:textAllCaps="false"
                 android:textColor="@android:color/background_dark"
                 android:textSize="20sp" />
+
         </LinearLayout>
+
     </ScrollView>
 
     <LinearLayout
@@ -73,7 +75,6 @@
         android:id="@+id/userMessage"
         android:layout_width="320dp"
         android:layout_height="wrap_content"
-        android:background="@color/greyDate"
         android:hint="@string/type_message"
         android:importantForAutofill="no"
         android:inputType="text"
@@ -81,10 +82,10 @@
         android:textColor="@color/dark_font"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.186"
+        app:layout_constraintHorizontal_bias="0.175"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.976"
+        app:layout_constraintVertical_bias="0.985"
         tools:ignore="TextContrastCheck" />
 
     <ImageButton
@@ -95,12 +96,11 @@
         app:backgroundTint="#F5D085"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.954"
+        app:layout_constraintHorizontal_bias="0.974"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.976"
+        app:layout_constraintVertical_bias="0.986"
         app:srcCompat="@android:drawable/ic_menu_send"
         tools:ignore="ImageContrastCheck" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
