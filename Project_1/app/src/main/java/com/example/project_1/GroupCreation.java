@@ -29,7 +29,7 @@ public class GroupCreation extends AppCompatActivity {
         cancelButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(GroupCreation.this, UserProfile_2.class));
+                startActivity(new Intent(GroupCreation.this, UserProfile.class));
                 finish();
             }
         });
