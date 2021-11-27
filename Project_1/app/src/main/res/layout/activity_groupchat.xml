@@ -1,106 +1,52 @@
-<?xml version="1.0" encoding="utf-8"?>
-
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
     android:background="@color/standard"
     tools:context=".Chat">
 
-    <include
-        android:id="@+id/group_chat_bar"
-        layout="@layout/app_bar" />
-
-    <View
-        android:id="@+id/bottomBar"
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:background="@drawable/rectangle"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <ScrollView
-        android:id="@+id/scrollview"
-        android:layout_width="match_parent"
+    <ListView
+        android:id="@+id/chat_list_view"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/mylinearlayout"
-        android:layout_below="@+id/group_chat_bar"
-        app:layout_constraintBottom_toTopOf="@+id/bottomBar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/group_chat_bar">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/messagesDisplay"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="2dp"
-                android:layout_marginEnd="2dp"
-                android:layout_marginRight="2dp"
-                android:layout_marginBottom="60dp"
-                android:padding="10dp"
-                android:textAllCaps="false"
-                android:textColor="@android:color/background_dark"
-                android:textSize="20sp" />
-
-        </LinearLayout>
-
-    </ScrollView>
+        android:layout_above="@+id/listFooter"
+        android:layout_alignParentTop="true"
+        android:divider="@null"
+        android:dividerHeight="0dp"
+        android:transcriptMode="alwaysScroll" />
 
     <LinearLayout
-        android:id="@+id/mylinearlayout"
-        android:layout_width="match_parent"
-        android:layout_height="620dp"
-        android:layout_alignParentStart="true"
+        android:id="@+id/listFooter"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="-3dp">
+        android:gravity="bottom">
+
+        <EditText
+            android:id="@+id/messageInput"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:hint="@string/type_message"
+            android:imeActionLabel="@string/send"
+            android:imeOptions="actionUnspecified"
+            android:inputType="textCapSentences|textAutoCorrect"
+            android:maxLines="1"
+            android:gravity="center_horizontal"
+            android:background="@color/acc_green"/>
+
+        <ImageButton
+            android:id="@+id/sendButton"
+            android:padding="10dp"
+            android:background="@android:drawable/ic_menu_send"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/ic_menu_send"
+            android:contentDescription="@string/send"/>
 
     </LinearLayout>
 
-    <EditText
-        android:id="@+id/userMessage"
-        android:layout_width="320dp"
-        android:layout_height="wrap_content"
-        android:hint="@string/type_message"
-        android:importantForAutofill="no"
-        android:inputType="text"
-        android:padding="17dp"
-        android:textColor="@color/dark_font"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.175"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.985"
-        tools:ignore="TextContrastCheck" />
-
-    <ImageButton
-        android:id="@+id/sendButton"
-        android:layout_width="58dp"
-        android:layout_height="58dp"
-        android:contentDescription="@string/send"
-        app:backgroundTint="#F5D085"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.974"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.986"
-        app:srcCompat="@android:drawable/ic_menu_send"
-        tools:ignore="ImageContrastCheck" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>
