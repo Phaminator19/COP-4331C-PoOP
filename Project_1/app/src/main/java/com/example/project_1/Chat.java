@@ -203,6 +203,8 @@ public class Chat extends AppCompatActivity{
                     Log.d("currentGroupID", error.getMessage());
                 }
             });
+
+
             //Alternatively to get the reference I will use this? - Quang
             String messKey = groupID;
             HashMap<String, Object> groupMessKey = new HashMap<>();

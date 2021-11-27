@@ -16,11 +16,11 @@
         <activity android:name=".Signup"
             android:label="Sign Up"
             android:parentActivityName=".MainActivity"/>
-        <activity android:name=".UserProfile"
+        <activity android:name=".UserProfile_2"
             android:label="User Profile" />
-        <activity android:name=".UserSettings"
+        <activity android:name=".UserSettings_2"
             android:label="User Settings"
-            android:parentActivityName=".UserProfile"/>
+            android:parentActivityName=".UserProfile_2"/>
         <activity android:name=".Chat"
             android:label= "Group Chat"
             android:theme="@style/AppTheme.NoActionBar"/>

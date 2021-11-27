@@ -8,9 +8,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-
 public class GroupCreation extends AppCompatActivity {
     Button createGroupBut;
     Button cancelButton;
@@ -32,7 +29,7 @@ public class GroupCreation extends AppCompatActivity {
         cancelButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(GroupCreation.this, UserProfile.class));
+                startActivity(new Intent(GroupCreation.this, UserProfile_2.class));
                 finish();
             }
         });

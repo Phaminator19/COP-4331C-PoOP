@@ -13,7 +13,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.HashMap;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 
 
 import com.google.android.gms.tasks.OnCompleteListener;

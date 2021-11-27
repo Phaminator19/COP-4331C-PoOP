@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/standard"
-    tools:context=".UserSettings">
+    tools:context=".UserSettings_2">
 
 
     <TextView
