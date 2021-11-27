@@ -106,8 +106,7 @@ public class Signup extends AppCompatActivity{
                     userMap.put("Email", email);
                     userMap.put("Password", pass);
                     reference = firebaseDatabase.getReference().child("User");
-                    DatabaseReference getUser = firebaseDatabase.getReference("User");
-                    String userID = getUser.push().getKey();
+                    String userID = mAuth.getCurrentUser().getUid();
                     userMap.put("user-id", userID);
                     reference.child(userID).setValue(userMap);
 
