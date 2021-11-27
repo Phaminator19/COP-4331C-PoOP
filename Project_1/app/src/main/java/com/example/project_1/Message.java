@@ -2,7 +2,7 @@ package com.example.project_1;
 
 public class Message {
 
-    private String message; 
+    private String message;
     private String userId;
     private String userName;
     private String timestamp;
