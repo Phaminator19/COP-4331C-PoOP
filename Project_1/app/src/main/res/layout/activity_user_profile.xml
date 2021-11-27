@@ -29,10 +29,10 @@
         android:contentDescription="@string/todo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.07"
+        app:layout_constraintHorizontal_bias="0.266"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.054"
+        app:layout_constraintVertical_bias="0.07"
         app:srcCompat="@drawable/agora" />
 
     <TextView
@@ -40,6 +40,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="112dp"
+        android:background="@color/teal_200"
         android:fontFamily="@font/lancelot"
         android:textColor="@color/dark_font"
         android:textSize="20sp"
@@ -70,14 +71,14 @@
         app:layout_constraintVertical_bias="0.102" />
 
     <Button
-        android:id="@+id/GroupSettings"
+        android:id="@+id/JoinGroup"
         android:layout_width="200dp"
         android:layout_height="56dp"
         android:layout_gravity="center"
-        android:layout_marginTop="140dp"
+        android:layout_marginTop="16dp"
         android:layout_weight="0"
         android:fontFamily="@font/lancelot"
-        android:text="Group Settings"
+        android:text="Join Group"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@color/dark_font"
         android:textSize="20sp"
@@ -87,67 +88,34 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.175"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.328" />
-
-    <Button
-        android:id="@+id/Searching"
-        android:layout_width="200dp"
-        android:layout_height="56dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="140dp"
-        android:layout_weight="0"
-        android:fontFamily="@font/lancelot"
-        android:text="Group Chat"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="@color/dark_font"
-        android:textSize="20sp"
-        app:backgroundTint="#F5D085"
-        app:cornerRadius="15sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.175"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.583" />
+        app:layout_constraintTop_toBottomOf="@+id/UserSettings"
+        app:layout_constraintVertical_bias="0.144" />
 
     <ImageView
         android:id="@+id/imageView5"
         android:layout_width="104dp"
         android:layout_height="87dp"
+        android:layout_marginStart="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.859"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/UserSettings"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.282"
+        app:layout_constraintVertical_bias="0.281"
         app:srcCompat="@drawable/user" />
 
     <ImageView
         android:id="@+id/imageView6"
         android:layout_width="124dp"
         android:layout_height="107dp"
+        android:layout_marginStart="16dp"
         android:backgroundTint="#80FFFFFF"
         android:backgroundTintMode="src_over"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.888"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/JoinGroup"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.48"
         app:srcCompat="@drawable/group" />
-
-    <ImageView
-        android:id="@+id/imageView9"
-        android:layout_width="94dp"
-        android:layout_height="78dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.832"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.676"
-        app:srcCompat="@drawable/search" />
 
     <Button
         android:id="@+id/GroupCreation"
@@ -168,6 +136,6 @@
         app:layout_constraintHorizontal_bias="0.175"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.794" />
+        app:layout_constraintVertical_bias="0.56" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -27,10 +27,6 @@ public class Message {
         return message;
     }
 
-    public String getUserId() {
-        return userId;
-    }
-
     public String getTimestamp() {
         return this.timestamp;
     }

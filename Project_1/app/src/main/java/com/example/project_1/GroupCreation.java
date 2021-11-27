@@ -8,9 +8,20 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 public class GroupCreation extends AppCompatActivity {
     Button createGroupBut;
     Button cancelButton;
+    private DatabaseReference reference;
+    private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance("https://groupmatchproject-default-rtdb.firebaseio.com");
+    GroupList groupList = new GroupList();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -38,7 +49,7 @@ public class GroupCreation extends AppCompatActivity {
     }
 
         public void handlingGroupCreation() {
-            Group g = new Group();
+
             EditText groupName = findViewById(R.id.createGroupName);
             EditText groupInterest = findViewById(R.id.createGroupInterest);
             EditText groupBios = findViewById(R.id.createGroupBios);
@@ -65,12 +76,28 @@ public class GroupCreation extends AppCompatActivity {
                 return;
             }
 
-            g.createTheGroup(name, interest, bios);
-            Intent i = new Intent(GroupCreation.this, Chat.class);
+            createTheGroup(name, interest, bios);
 
-            i.putExtra("Group Name", name);
+            Intent i = new Intent(GroupCreation.this, Chat.class);
+            i.putExtra("GroupName", name);
             startActivity(i);
 
             finish();
         }
+
+
+    //save the group into the database
+    public void createTheGroup(String name, String interest, String bios) {
+        reference = firebaseDatabase.getReference().child("Group");
+        DatabaseReference getGroup = firebaseDatabase.getReference("Group");
+        String groupID = getGroup.push().getKey();
+        Map<String, String> groupMap = new HashMap<>();
+        groupMap.put("GroupName", name);
+        groupMap.put("GroupInterest", interest);
+        groupMap.put("GroupBios", bios);
+        groupMap.put("GroupID", groupID);
+        reference.child(name).setValue(groupMap);
+
+        Group newGroup = new Group();
     }
+}

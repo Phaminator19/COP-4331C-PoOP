@@ -2,20 +2,31 @@ package com.example.project_1;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.HashMap;
 
 public class GroupSettings extends AppCompatActivity {
+    private final static String TAG = "ViewGroupDatabase";
     Button GroupSave;
-    Button GroupEditBut;
+    Button GroupEditCancel;
     Group g = new Group();
-    private DatabaseReference reference;
+    private String GroupName;
+    private DatabaseReference reference, getGroupRef;
     private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance("https://groupmatchproject-default-rtdb.firebaseio.com");
 
 
@@ -23,6 +34,24 @@ public class GroupSettings extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_group_settings);
+
+        if(savedInstanceState == null) {
+            if (getIntent().getExtras()== null)
+            {
+                GroupName = "";
+            }
+            else
+            {
+                GroupName = getIntent().getExtras().getString("GroupName");
+            }
+        }
+        else
+        {
+            GroupName = (String)savedInstanceState.getSerializable("GroupName");
+        }
+
+
+        reference = firebaseDatabase.getReference().child("Group").child(GroupName);
 
         GroupSave = findViewById(R.id.saveChanges);
         GroupSave.setOnClickListener(new View.OnClickListener() {
@@ -35,19 +64,22 @@ public class GroupSettings extends AppCompatActivity {
             }
         });
 
-        GroupEditBut = findViewById(R.id.editIcon);
-        GroupEditBut.setOnClickListener(new View.OnClickListener() {
+        GroupEditCancel = findViewById(R.id.cancelButton2);
+        GroupEditCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                re_editGroup();
+                Intent i = new Intent(GroupSettings.this, Chat.class);
+                i.putExtra("GroupName", GroupName);
+                startActivity(i);
             }
         });
+
 
     }
 
     public void handlingGroupSettings() {
         EditText group_name = findViewById(R.id.editGroupName);
-        EditText group_interest = findViewById(R.id.editInterests);
+        EditText group_interest = findViewById(R.id.editGroupInterest);
         EditText group_bios = findViewById(R.id.editBio);
 
         String name = group_name.getText().toString().trim();
@@ -55,9 +87,6 @@ public class GroupSettings extends AppCompatActivity {
         String bios = group_bios.getText().toString().trim();
 
 //        String groupID = getGroupID.push().getKey();
-        reference = firebaseDatabase.getReference();
-        DatabaseReference getGroupRef = reference.child("Group");
-        String groupID = getGroupRef.push().getKey();
 
         if(name.isEmpty()) {
             group_name.setError("Group name is required");
@@ -75,17 +104,46 @@ public class GroupSettings extends AppCompatActivity {
             return;
         }
 
-        g.editTheGroupName(getGroupRef, groupID, name, interest, bios);
+
+        reference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                editTheGroupName(reference, name, interest, bios);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
         Intent i = new Intent(GroupSettings.this, Chat.class);
-        i.putExtra("Group Name", name);
+        i.putExtra("GroupName", name);
         startActivity(i);
         finish();
     }
 
-    public void re_editGroup() {
-        findViewById(R.id.editGroupName).setEnabled(true);
-        findViewById(R.id.editInterests).setEnabled(true);
-        findViewById(R.id.editBio).setEnabled(true);
-    }
+    //This will be called by the GroupSetting class - Quang
+    public void editTheGroupName(DatabaseReference ref, String new_name, String new_interest, String new_bios) {
+        ref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for (DataSnapshot ds: snapshot.getChildren()) {
+                    HashMap<String, Object> groupMap = new HashMap<>();
+                    groupMap.put("GroupName", new_name);
+                    groupMap.put("GroupInterest", new_interest);
+                    groupMap.put("GroupBios", new_bios);
 
+                    ds.getRef().updateChildren(groupMap);
+                    Log.d(TAG, "Group edit successful!");
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Log.e(TAG, error.getMessage()); //Don't ignore this
+            }
+        });
+
+    }
 }
+
