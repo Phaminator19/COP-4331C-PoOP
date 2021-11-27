@@ -5,7 +5,6 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Display;
 import android.widget.EditText;
@@ -76,7 +75,7 @@ public class Chat extends AppCompatActivity{
         currUserId = chatAuth.getCurrentUser().getUid();
         userRef = db.getReference().child("User").child(currUserId);
         groupNameRef = db.getReference("Group").child(currGroupName);
-
+        groupID = groupNameRef.push().getKey();
 
         //Toast.makeText(Chat.this,"",Toast.LENGTH_SHORT).show();
 
@@ -131,13 +130,13 @@ public class Chat extends AppCompatActivity{
 
     // initializes all the components on the groupchat activity page - Estefania
     private void initializeActivity(){
-        top = findViewById(R.id.group_chat_bar_layout);
+        top = findViewById(R.id.group_chat_bar);
         setSupportActionBar(top);
         getSupportActionBar().setTitle(currGroupName);
-        sendMessage = findViewById(R.id.sendmessagebutton);
-        userMessage = findViewById(R.id.inputgroupmessage);
+        sendMessage = findViewById(R.id.sendButton);
+        userMessage = findViewById(R.id.userMessage);
         displayMessages = findViewById(R.id.messagesDisplay);
-        scroll = findViewById(R.id.myscrollview);
+        scroll = findViewById(R.id.scrollview);
     }
 
     // gets the current user's info from the database - Estefania
@@ -161,9 +160,36 @@ public class Chat extends AppCompatActivity{
     // saves message to the database - Estefania
     private void saveMessage(){
         // get message and message key - Estefania
-        String message = userMessage.getText().toString().trim();
+        String message = userMessage.getText().toString();
 
-        // if there is no message, do nothing - Estefania
+        if (message.length() > 0)
+        {
+            // clear the prompt in the edit text - Estefania
+            userMessage.getText().clear();
+
+            // get the current date and time - Estefania
+            Calendar dateCal = Calendar.getInstance();
+            Calendar timeCal = Calendar.getInstance();
+            SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yy");
+            SimpleDateFormat timeFormat = new SimpleDateFormat("hh:mm a");
+            currDate = dateFormat.format(dateCal.getTime());
+            currTime = timeFormat.format(timeCal.getTime());
+
+            // hashmap for message information - Estefania
+            HashMap<String, Object> messageInfo = new HashMap<>();
+            messageInfo.put("name", currUserName);
+            messageInfo.put("message", message);
+            messageInfo.put("date", currDate);
+            messageInfo.put("time", currTime);
+
+            // save message to database - Estefania
+            DatabaseReference messRef = db.getReference("Group/" + groupID + "/Messages/");
+            messRef.push().setValue(messageInfo);
+
+
+        }
+
+        /*// if there is no message, do nothing - Estefania
         if(TextUtils.isEmpty(message)){
             Toast.makeText(this,"", Toast.LENGTH_SHORT).show();
         }
@@ -223,7 +249,7 @@ public class Chat extends AppCompatActivity{
 
             //put it all together - Quang
             //groupChatRef.child("Message_Database").setValue(messageInfo);
-        }
+        }*/
     }
 
     // displays all the messages in the chat as they are sent/received - Estefania
