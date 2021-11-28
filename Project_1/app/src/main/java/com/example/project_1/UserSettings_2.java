@@ -33,7 +33,7 @@ public class UserSettings_2 extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
         String id = mAuth.getCurrentUser().getUid();
-        DatabaseReference userRef = db.getReference().child("User");
+        DatabaseReference userRef = db.getReference("User").child(id);
 
         Button save = findViewById(R.id.editSaveUser);
         save.setOnClickListener(new View.OnClickListener() {
@@ -80,28 +80,13 @@ public class UserSettings_2 extends AppCompatActivity {
             return;
         }
 
-        Query userQuery = reference.orderByChild("user-id").equalTo(ID);
-        ValueEventListener value = new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                for(DataSnapshot ds: snapshot.getChildren()) {
-                    HashMap<String, Object> userMap = new HashMap<>();
-                    userMap.put("Username", name);
-                    userMap.put("Pronouns", PRONOUNS);
-                    userMap.put("Birthday", bd);
-                    userMap.put("Interest", inte);
+        HashMap<String, Object> userMap = new HashMap<>();
+        userMap.put("Username", name);
+        userMap.put("Pronouns", PRONOUNS);
+        userMap.put("Birthday", bd);
+        userMap.put("Interest", inte);
+        reference.push().setValue(userMap);
 
-                    ds.getRef().updateChildren(userMap);
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                Log.d("USERDatabaseError", error.getMessage());
-            }
-        };
-
-        userQuery.addListenerForSingleValueEvent(value);
         startActivity(new Intent(this, UserProfile.class));
         finish();
     }
