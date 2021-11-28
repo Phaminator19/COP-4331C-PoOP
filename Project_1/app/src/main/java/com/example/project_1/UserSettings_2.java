@@ -43,13 +43,21 @@ public class UserSettings_2 extends AppCompatActivity {
             }
         });
 
+        Button cancelBut = findViewById(R.id.cancelUserEdit);
+        cancelBut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(UserSettings_2.this, UserProfile.class));
+                finish();
+            }
+        });
     }
 
     public void handlingTheUserEdit(DatabaseReference reference, String ID) {
         TextView username = findViewById(R.id.editUsername);
         TextView pronouns = findViewById(R.id.editPronouns);
         TextView Birthday = findViewById(R.id.editBirthday);
-        TextView Interests = findViewById(R.id.editGroupInterest);
+        TextView Interests = findViewById(R.id.editInterests);
 
         String name = username.getText().toString();
         String PRONOUNS = pronouns.getText().toString();
@@ -85,7 +93,7 @@ public class UserSettings_2 extends AppCompatActivity {
         userMap.put("Pronouns", PRONOUNS);
         userMap.put("Birthday", bd);
         userMap.put("Interest", inte);
-        reference.push().setValue(userMap);
+        reference.setValue(userMap);
 
         startActivity(new Intent(this, UserProfile.class));
         finish();

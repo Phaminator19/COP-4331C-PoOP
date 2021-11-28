@@ -41,7 +41,6 @@
             app:layout_constraintVertical_bias="0.272" />
 
 
-
         <TextView
             android:id="@+id/groupName"
             android:layout_width="wrap_content"
@@ -49,8 +48,9 @@
             android:layout_marginStart="16dp"
             android:shadowColor="#898A89"
             android:text="Study Group"
-            android:textColor="@color/dark_font"
+            android:textColor="@color/black"
             android:textSize="22sp"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/imageView"
             app:layout_constraintTop_toTopOf="parent"
@@ -58,8 +58,8 @@
 
         <ImageButton
             android:id="@+id/backButton"
-            android:layout_width="20dp"
-            android:layout_height="28dp"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="8dp"
             android:adjustViewBounds="true"
@@ -76,13 +76,14 @@
 
         <ImageButton
             android:id="@+id/infoButton"
-            android:layout_width="28dp"
-            android:layout_height="28dp"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
             android:layout_marginEnd="16dp"
             android:background="@android:drawable/ic_menu_info_details"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="SpeakableTextPresentCheck" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -119,37 +120,41 @@
 
         <EditText
             android:id="@+id/userMessage"
-            android:layout_width="280dp"
-            android:layout_height="wrap_content"
+            android:layout_width="301dp"
+            android:layout_height="match_parent"
             android:layout_alignParentStart="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="48dp"
-            android:layout_marginBottom="10dp"
+            android:layout_marginStart="27dp"
+            android:layout_marginBottom="0dp"
             android:layout_weight="2"
             android:ems="10"
             android:hint="@string/type_message"
-            android:textColor="@color/dark_font"
             android:inputType="text"
             android:padding="5dip"
             android:paddingHorizontal="10dp"
-            android:text="" />
+            android:text=""
+            android:textColor="@color/dark_font"
+            android:textColorHint="@color/black"
+            tools:ignore="TouchTargetSizeCheck" />
 
         <ImageButton
             android:id="@+id/sendButton"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
+            android:layout_width="55dp"
+            android:layout_height="50dp"
+            android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
             android:layout_gravity="center"
             android:layout_marginHorizontal="10dp"
-            android:layout_marginStart="5dp"
-            android:layout_marginBottom="10dp"
+            android:layout_marginStart="23dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="4dp"
             android:layout_toEndOf="@+id/userMessage"
             android:background="@android:drawable/ic_menu_send"
-            android:backgroundTint="@color/dark_org_button"
+            android:backgroundTint="@color/searchBarColor"
             android:onClick="sendMessage"
             android:padding="20dp"
             android:scaleType="fitCenter"
-            tools:ignore="SpeakableTextPresentCheck" />
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
     </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
