@@ -30,4 +30,14 @@ public class GroupList extends ListType{
             i++;
         }
     }
+
+    @Override
+    public Integer size() {
+        return GroupList.size();
+    }
+
+    @Override
+    public Group get(int index) {
+        return GroupList.get(index);
+    }
 }

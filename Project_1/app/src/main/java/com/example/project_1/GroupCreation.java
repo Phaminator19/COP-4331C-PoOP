@@ -20,7 +20,6 @@ public class GroupCreation extends AppCompatActivity {
     Button cancelButton;
     private DatabaseReference reference;
     private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance("https://groupmatchproject-default-rtdb.firebaseio.com");
-    GroupList groupList = new GroupList();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -99,5 +98,9 @@ public class GroupCreation extends AppCompatActivity {
         reference.child(name).setValue(groupMap);
 
         Group newGroup = new Group();
+        newGroup.setBios(bios);
+        newGroup.setName(name);
+        newGroup.setInterest(interest);
+
     }
 }

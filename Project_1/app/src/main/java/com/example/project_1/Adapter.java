@@ -12,39 +12,46 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
-    private ArrayList<String> GroupList;
     Context cl;
+    private GroupList gr;
 
-    public Adapter(Context c, ArrayList<String> GroupList) {
+    public Adapter(Context c, GroupList GroupList) {
         this.cl = c;
-        this.GroupList = GroupList;
+        gr = GroupList;
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(cl).inflate(R.layout.row, parent, false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.row, parent, false);
         return new ViewHolder(v);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.gName.setText(GroupList.get(position));
+        holder.gName.setText(gr.get(position).getName());
+        holder.gInterest.setText(gr.get(position).getInterest());
+        holder.gBios.setText(gr.get(position).getBios());
+
     }
 
     @Override
     public int getItemCount() {
-        return GroupList.size();
+        return gr.size();
     }
 
     class ViewHolder extends RecyclerView.ViewHolder{
 
         public TextView gName;
+        public TextView gInterest;
+        public TextView gBios;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            gName = (TextView) itemView.findViewById(R.id.gName);
+            gName = itemView.findViewById(R.id.gName);
+            gBios = itemView.findViewById(R.id.gBios2);
+            gInterest = itemView.findViewById(R.id.gInterest2);
         }
     }
 }

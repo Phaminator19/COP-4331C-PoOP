@@ -26,7 +26,7 @@ public class GroupSettings extends AppCompatActivity {
     Button GroupEditCancel;
     Group g = new Group();
     private String GroupName;
-    private DatabaseReference reference, getGroupRef;
+    private DatabaseReference reference;
     private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance("https://groupmatchproject-default-rtdb.firebaseio.com");
 
 

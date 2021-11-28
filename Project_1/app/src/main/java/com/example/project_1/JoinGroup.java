@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 //import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
@@ -21,11 +22,12 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 
 public class JoinGroup extends AppCompatActivity {
+    Button joinButton;
     private final static String TAG = "ViewGroupDATABASE";
     DatabaseReference databaseUsers;
-    private ArrayList<String> GroupList;
+    private GroupList GroupList;
     private RecyclerView recyclerView;
-
+    private String GroupPath;
     FirebaseDatabase database = FirebaseDatabase.getInstance("https://groupmatchproject-default-rtdb.firebaseio.com/");
 
     @Override
@@ -33,60 +35,42 @@ public class JoinGroup extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_join_group);
 
-        recyclerView = findViewById(R.id.JoinGroupList);
+
+
         databaseUsers = database.getReference("Group");
         DatabaseReference groupReference = databaseUsers;
-
+        recyclerView = findViewById(R.id.JoinGroupList);
+        GroupList = new GroupList();
 
         groupReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-//
-//                GroupList = new ArrayList<>();
-//
-//                for (DataSnapshot dsp: snapshot.getChildren()) {
-//                    GroupList.add(String.valueOf(dsp.getValue()).toString());
-//                }
-//                for (int i = 0; i < GroupList.size(); i++) {
-//                    System.out.println(GroupList.get(i));
-//                }
             for(DataSnapshot ds: snapshot.getChildren()) {
-                GroupInformation gInformation = new GroupInformation();
-                gInformation.setGroupName(ds.getValue(GroupInformation.class).getGroupName());
-
+                Group gInformation = new Group();
+                gInformation.setName(ds.child("GroupName").getValue(String.class));
+                gInformation.setBios(ds.child("GroupBios").getValue(String.class));
+                gInformation.setInterest(ds.child("GroupInterest").getValue(String.class));
                 //display the group name
-                Log.d(TAG, "Show groupName " + gInformation.getGroupName());
-
-                GroupList = new ArrayList<>();
-                GroupList.add(gInformation.getGroupName());
+                Log.d(TAG, "Show Group Name " + gInformation.getName());
+                Log.d(TAG, "Show Group Interest " + gInformation.getInterest());
+                Log.d(TAG, "Show Group Bios " + gInformation.getBios());
+                GroupList.addGroup(gInformation);
             }
-                Adapter adapter = new Adapter(JoinGroup.this, GroupList);
-                RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
-                recyclerView.setLayoutManager(layoutManager);
-                recyclerView.setItemAnimator(new DefaultItemAnimator());
-                recyclerView.setAdapter(adapter);
-
+                setAdapter();
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
             }
         });
-
-
-
-//        setAdapter();
     }
 
-//    private void setAdapter() {
-//        for (int i = 0; i < GroupList.size(); i++) {
-//                    System.out.println(GroupList.get(i));
-//                }
-//        Adapter adapter = new Adapter(JoinGroup.this, GroupList);
-//        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
-//        recyclerView.setLayoutManager(layoutManager);
-//        recyclerView.setItemAnimator(new DefaultItemAnimator());
-//        recyclerView.setAdapter(adapter);
-//    }
+    private void setAdapter() {
+        Adapter adapter = new Adapter(JoinGroup.this, GroupList);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
+        recyclerView.setAdapter(adapter);
+    }
 
 }

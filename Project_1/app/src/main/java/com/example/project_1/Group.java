@@ -1,24 +1,7 @@
 package com.example.project_1;
-
-import static android.content.ContentValues.TAG;
-
-import android.util.Log;
-
-import androidx.annotation.NonNull;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
-import com.google.firebase.database.ValueEventListener;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 public class Group {
-    private static final String TAG = "ViewGroupDatabase";
+
+
     private String name;
     private String interest;
     private String bios;
@@ -37,6 +20,19 @@ public class Group {
 
     public String getBios() {
         return bios;
+    }
+
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setInterest(String interest) {
+        this.interest = interest;
+    }
+
+    public void setBios(String bios) {
+        this.bios = bios;
     }
 
 }

@@ -93,7 +93,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginLeft="10dp"
-                                    android:text="10.19.2021"
+                                    android:text="11.24.2021"
                                     android:textColor="@android:color/darker_gray"></TextView>
                             </LinearLayout>
 
@@ -192,7 +192,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginLeft="10dp"
-                                    android:text="Anna Dawnson"
+                                    android:text="Ann Nguyen"
                                     android:textColor="@android:color/darker_gray"></TextView>
 
                             </LinearLayout>
@@ -212,12 +212,13 @@
                             android:orientation="vertical"
 
                             >
+
                             <TextView
                                 android:id="@+id/count"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:padding="10dp"
-                                android:text="+135"
+                                android:text="0"
                                 android:textAlignment="center"
                                 android:textColor="@color/textBlue"
                                 android:textSize="15sp"
@@ -264,17 +265,19 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"></LinearLayout>
+
         <com.google.android.material.button.MaterialButton
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="0dp"
             android:layout_weight="9"
-            android:backgroundTint="@color/greenJoinBtnColor"
-            app:cornerRadius="20dp"
+            android:backgroundTint="@color/dark_org_button"
             android:elevation="10dp"
             android:text="JOIN"
-            android:textColor="@android:color/white">
-            ></com.google.android.material.button.MaterialButton>
+            android:textColor="@android:color/white"
+            app:cornerRadius="20dp">
+            >
+        </com.google.android.material.button.MaterialButton>
     </LinearLayout>
 
 
