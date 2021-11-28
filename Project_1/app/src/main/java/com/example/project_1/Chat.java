@@ -142,7 +142,7 @@ public class Chat extends AppCompatActivity
             }
         });
     }
-    // initiate components from groupchat activity
+    // initiate components from groupchat activity - Estefania
     private void initiateActivity()
     {
         userMessage = findViewById(R.id.userMessage);
@@ -152,7 +152,7 @@ public class Chat extends AppCompatActivity
         messageView.setAdapter(messageAdapter);
     }
 
-    // save the message to the database
+    // save the message to the database - Estefania
     public void sendMessage(View view)
     {
         String msg = userMessage.getText().toString();

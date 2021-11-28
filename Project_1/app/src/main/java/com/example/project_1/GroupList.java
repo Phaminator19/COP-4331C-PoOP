@@ -1,10 +1,9 @@
 package com.example.project_1;
 
 import java.util.List;
-import java.util.Formatter;
 import java.util.ArrayList;
 
-public class GroupList extends ListType{
+public class GroupList extends GroupListType {
     List<Group> GroupList;
 
     public GroupList() {
