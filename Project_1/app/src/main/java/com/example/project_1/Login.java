@@ -80,7 +80,7 @@ public class Login extends AppCompatActivity {
                         Toast.makeText(Login.this, "Failed to login. The email isn't verified!", Toast.LENGTH_LONG).show();
                 }
                 } else {
-                    Toast.makeText(Login.this, "Failed to login. Credential isn't correct!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(Login.this, "Failed to login!", Toast.LENGTH_LONG).show();
                 }
             }
         });
