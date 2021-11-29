@@ -1,62 +1,61 @@
 package com.example.project_1;
 
 
-import androidx.appcompat.app.AppCompatActivity;
 
-public class Event extends AppCompatActivity {
-    String eventtitle;
-    String eventcategory;
-    //Integer eventpicture;
-    String eventdate;
-    String eventtime;
 
-    public Event(String eventitle, String eventcategory, String eventtime, String eventdate) {
-        this.eventtitle = eventtitle;
-        this.eventcategory = eventcategory;
-        //this.eventpicture = eventpicture;
-        this.eventdate = eventdate;
-        this.eventtime = eventtime;
+public class Event {
+    String eventName;
+    String eventDate;
+    String eventTime;
+    String eventDescription;
+    String eventCreator;
+    String eventGName;
+
+    public Event() {
     }
 
-    public String getEventtitle(){
-        return eventtitle;
+    public String getEventName(){
+        return eventName;
     }
 
-    public void setEventtitle(String eventtitle){
-        this.eventtitle = eventtitle;
+    public void setEventName(String eventName){
+        this.eventName = eventName;
     }
 
-    public String getEventcategory(){
-        return eventcategory;
+    public String getEventDate(){
+        return eventDate;
     }
 
-    public void setEventcategory(String eventcategory){
-        this.eventcategory = eventcategory;
+    public void setEventDate(String eventDate){
+        this.eventDate = eventDate;
     }
 
-
-//    public Integer getEventpicture(){
-//        return eventpicture;
-//    }
-//
-//    public void setEventpicture(Integer eventpicture){
-//        this.eventpicture = eventpicture;
-//    }
-//
-    public String getEventdate(){
-        return eventdate;
+    public String getEventTime(){
+        return eventTime;
     }
 
-    public void setEventdate(String eventdate){
-        this.eventdate = eventdate;
+    public void setEventTime(String eventTime){
+        this.eventTime = eventTime;
     }
 
-    public String getEventtime(){
-        return eventtime;
+    public String getEventDescription(){
+        return eventDescription;
     }
 
-    public void setEventtime(String eventtime){
-        this.eventtime = eventtime;
+    public void setEventDescription(String eventDescription){
+        this.eventDescription = eventDescription;
+    }
+
+    public String getEventCreator() { return eventCreator; }
+
+    public void setEventCreator(String eventCreator){
+        this.eventCreator = eventCreator;
+    }
+
+    public String getEventGName() { return eventGName; }
+
+    public void setEventGName(String eventGName){
+        this.eventGName = eventGName;
     }
 }
 

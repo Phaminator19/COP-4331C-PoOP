@@ -35,7 +35,7 @@
         <activity
             android:name=".GroupSettings"
             android:label="Group Settings"
-            android:parentActivityName=".Chat" />
+            android:parentActivityName=".GroupMenu" />
         <activity
             android:name=".GroupCreation"
             android:label="Group Creation"

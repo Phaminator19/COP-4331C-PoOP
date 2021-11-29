@@ -18,7 +18,7 @@ public class EventList extends EventListType {
     public void view() {
         int i = 0;
         for(Event e : eventList) {
-            System.out.printf("%d) " + e.getEventtitle(), i);
+            System.out.printf("%d) " + e.getEventName(), i);
             System.out.println("\n");
             i++;
         }
