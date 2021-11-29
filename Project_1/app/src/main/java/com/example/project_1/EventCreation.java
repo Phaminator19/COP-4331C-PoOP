@@ -1,5 +1,6 @@
 package com.example.project_1;
 
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -7,7 +8,7 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class EventActivity extends AppCompatActivity {
+public class EventCreation extends AppCompatActivity {
     Button createEventButton;
     Button cancelEventEditButton;
     private String AdditionalGroupName;
@@ -36,7 +37,7 @@ public class EventActivity extends AppCompatActivity {
         createEventButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i4 = new Intent(EventActivity.this, EventMainPage.class);
+                Intent i4 = new Intent(EventCreation.this, EventMainPage.class);
                 i4.putExtra("GroupName", AdditionalGroupName);
                 startActivity(i4);
             }
@@ -46,12 +47,11 @@ public class EventActivity extends AppCompatActivity {
         cancelEventEditButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(EventActivity.this, GroupMenu.class);
+                Intent i = new Intent(EventCreation.this, GroupMenu.class);
                 i.putExtra("GroupName", AdditionalGroupName);
                 startActivity(i);
             }
         });
-
-
     }
 }
+

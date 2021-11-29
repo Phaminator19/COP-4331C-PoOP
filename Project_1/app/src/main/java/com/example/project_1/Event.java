@@ -1,5 +1,6 @@
 package com.example.project_1;
 
+
 import androidx.appcompat.app.AppCompatActivity;
 
 public class Event extends AppCompatActivity {
@@ -32,6 +33,7 @@ public class Event extends AppCompatActivity {
     public void setEventcategory(String eventcategory){
         this.eventcategory = eventcategory;
     }
+
 
 //    public Integer getEventpicture(){
 //        return eventpicture;

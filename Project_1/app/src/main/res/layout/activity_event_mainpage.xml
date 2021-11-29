@@ -93,7 +93,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginLeft="10dp"
-                                    android:text="11.24.2021"
+                                    android:text="10.19.2021"
                                     android:textColor="@android:color/darker_gray"></TextView>
                             </LinearLayout>
 
@@ -192,7 +192,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginLeft="10dp"
-                                    android:text="Ann Nguyen"
+                                    android:text="Anna Dawnson"
                                     android:textColor="@android:color/darker_gray"></TextView>
 
                             </LinearLayout>
@@ -212,13 +212,12 @@
                             android:orientation="vertical"
 
                             >
-
                             <TextView
                                 android:id="@+id/count"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:padding="10dp"
-                                android:text="0"
+                                android:text="+135"
                                 android:textAlignment="center"
                                 android:textColor="@color/textBlue"
                                 android:textSize="15sp"
@@ -255,6 +254,12 @@
         android:weightSum="10"
         >
 
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/round_cancle_btn"
+            android:elevation="30dp"></ImageView>
+
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -266,7 +271,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="0dp"
             android:layout_weight="9"
-            android:backgroundTint="@color/dark_org_button"
+            android:backgroundTint="@color/greenJoinBtnColor"
             android:elevation="10dp"
             android:text="JOIN"
             android:textColor="@android:color/white"

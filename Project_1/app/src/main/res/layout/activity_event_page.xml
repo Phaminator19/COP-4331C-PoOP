@@ -56,9 +56,7 @@
                     android:background="@drawable/search_bar_background"
                     android:drawableEnd="@drawable/search_tbn"
                     android:textColor="@color/white"
-                    android:paddingRight="5dp"
-                    android:inputType="text"
-                    android:autofillHints="">
+                    android:paddingRight="5dp">
                 </EditText>
             </LinearLayout>
 
