@@ -7,13 +7,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.graphics.Color;
 
-public class EventsMainPage extends AppCompatActivity {
+public class SearchEvent extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_event_mainpage);
-
-        getWindow().setStatusBarColor(Color.GRAY);
+        setContentView(R.layout.activity_event_page);
     }
 }

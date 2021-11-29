@@ -12,7 +12,7 @@ public class GroupMenu extends AppCompatActivity {
     Button eSettingsButton;
     Button eActivityButton;
     Button cancelTaskButton;
-
+    Button viewEventActivityButton;
     private String AdditionalGroupName;
 
     @Override
@@ -49,7 +49,7 @@ public class GroupMenu extends AppCompatActivity {
         eSettingsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i4 = new Intent(GroupMenu.this, EventActivity.class);
+                Intent i4 = new Intent(GroupMenu.this, EventCreation.class);
                 i4.putExtra("GroupName", AdditionalGroupName);
                 startActivity(i4);
             }
@@ -59,7 +59,7 @@ public class GroupMenu extends AppCompatActivity {
         eActivityButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i6 = new Intent(GroupMenu.this, EventMainPage.class);
+                Intent i6 = new Intent(GroupMenu.this, SearchEvent.class);
                 i6.putExtra("GroupName", AdditionalGroupName);
                 startActivity(i6);
             }
