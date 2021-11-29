@@ -49,7 +49,9 @@ public class GroupMenu extends AppCompatActivity {
         eSettingsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(GroupMenu.this, EventActivity.class));
+                Intent i4 = new Intent(GroupMenu.this, EventActivity.class);
+                i4.putExtra("GroupName", AdditionalGroupName);
+                startActivity(i4);
             }
         });
 
@@ -57,7 +59,9 @@ public class GroupMenu extends AppCompatActivity {
         eActivityButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(GroupMenu.this, EventMainPage.class));
+                Intent i6 = new Intent(GroupMenu.this, EventMainPage.class);
+                i6.putExtra("GroupName", AdditionalGroupName);
+                startActivity(i6);
             }
         });
 

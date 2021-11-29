@@ -255,18 +255,13 @@
         android:weightSum="10"
         >
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/round_cancle_btn"
-            android:elevation="30dp"></ImageView>
-
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"></LinearLayout>
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/join_event_button"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="0dp"
