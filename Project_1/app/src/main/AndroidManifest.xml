@@ -39,7 +39,7 @@
         <activity
             android:name=".GroupCreation"
             android:label="Group Creation"
-            android:parentActivityName=".Chat" />
+            android:parentActivityName=".UserProfile" />
         <activity android:name=".JoinGroup"
             android:label="Join Group"
             android:parentActivityName=".UserProfile" />
