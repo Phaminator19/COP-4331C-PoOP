@@ -78,13 +78,11 @@
             android:id="@+id/infoButton"
             android:layout_width="48dp"
             android:layout_height="48dp"
+            android:layout_marginEnd="16dp"
             android:background="@android:drawable/ic_menu_info_details"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.925"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.47"
             tools:ignore="SpeakableTextPresentCheck" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -104,7 +102,7 @@
         <ListView
             android:id="@+id/messages_view"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="match_parent"
             android:layout_weight="2"
             android:divider="#FFF" />
 
@@ -122,14 +120,17 @@
 
         <EditText
             android:id="@+id/userMessage"
-            android:layout_width="294dp"
+            android:layout_width="326dp"
             android:layout_height="match_parent"
             android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="1dp"
-            android:layout_marginEnd="85dp"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="146dp"
             android:layout_marginBottom="0dp"
+            android:layout_weight="2"
             android:ems="10"
             android:hint="@string/type_message"
             android:inputType="text"
@@ -142,13 +143,13 @@
 
         <ImageButton
             android:id="@+id/sendButton"
-            android:layout_width="wrap_content"
-            android:layout_height="41dp"
+            android:layout_width="45dp"
+            android:layout_height="match_parent"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
             android:layout_gravity="center"
             android:layout_marginHorizontal="10dp"
-            android:layout_marginEnd="14dp"
+            android:layout_marginEnd="37dp"
             android:layout_marginBottom="0dp"
             android:background="@android:drawable/ic_menu_send"
             android:backgroundTint="@color/searchBarColor"

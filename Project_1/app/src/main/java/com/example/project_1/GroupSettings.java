@@ -51,7 +51,7 @@ public class GroupSettings extends AppCompatActivity {
         }
 
 
-        reference = firebaseDatabase.getReference().child("Group").child(GroupName);
+        reference = firebaseDatabase.getReference("Group").child(GroupName);
 
         GroupSave = findViewById(R.id.saveChanges);
         GroupSave.setOnClickListener(new View.OnClickListener() {
@@ -68,7 +68,7 @@ public class GroupSettings extends AppCompatActivity {
         GroupEditCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(GroupSettings.this, Chat.class);
+                Intent i = new Intent(GroupSettings.this, GroupMenu.class);
                 i.putExtra("GroupName", GroupName);
                 startActivity(i);
             }
@@ -104,18 +104,7 @@ public class GroupSettings extends AppCompatActivity {
             return;
         }
 
-
-        reference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                editTheGroupName(reference, name, interest, bios);
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
+        editTheGroupName(reference, name, interest, bios);
 
         Intent i = new Intent(GroupSettings.this, Chat.class);
         i.putExtra("GroupName", name);
@@ -125,6 +114,7 @@ public class GroupSettings extends AppCompatActivity {
 
     //This will be called by the GroupSetting class - Quang
     public void editTheGroupName(DatabaseReference ref, String new_name, String new_interest, String new_bios) {
+        DatabaseReference newGroupNameRef = firebaseDatabase.getReference("Group");
         ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -134,7 +124,7 @@ public class GroupSettings extends AppCompatActivity {
                     groupMap.put("GroupInterest", new_interest);
                     groupMap.put("GroupBios", new_bios);
 
-                    ds.getRef().updateChildren(groupMap);
+                    newGroupNameRef.child(new_name).setValue(groupMap);
                     Log.d(TAG, "Group edit successful!");
                 }
             }
@@ -143,7 +133,7 @@ public class GroupSettings extends AppCompatActivity {
                 Log.e(TAG, error.getMessage()); //Don't ignore this
             }
         });
-
+        ref.removeValue();
     }
 }
 

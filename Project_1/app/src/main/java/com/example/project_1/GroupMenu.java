@@ -10,6 +10,8 @@ import android.widget.Button;
 public class GroupMenu extends AppCompatActivity {
     Button gSettingsButton;
     Button eSettingsButton;
+    Button eActivityButton;
+    Button cancelTaskButton;
 
     private String AdditionalGroupName;
 
@@ -50,6 +52,25 @@ public class GroupMenu extends AppCompatActivity {
                 startActivity(new Intent(GroupMenu.this, EventActivity.class));
             }
         });
+
+        eActivityButton = findViewById(R.id.viewEventActivity);
+        eActivityButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(GroupMenu.this, EventMainPage.class));
+            }
+        });
+
+        cancelTaskButton = findViewById(R.id.cancelGroupView);
+        cancelTaskButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i3 = new Intent(GroupMenu.this, Chat.class);
+                i3.putExtra("GroupName",AdditionalGroupName);
+                startActivity(i3);
+            }
+        });
     }
+
 
 }

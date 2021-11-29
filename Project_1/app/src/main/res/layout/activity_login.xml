@@ -9,26 +9,21 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    >
+    android:paddingBottom="@dimen/activity_vertical_margin">
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="169dp"
-        android:layout_marginEnd="169dp"
-        android:layout_marginBottom="16dp"
+        android:layout_width="194dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="16dp"
         android:fontFamily="@font/lancelot"
         android:text="@string/welcome_back_to"
+        android:textAlignment="center"
         android:textColor="@color/dark_font"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/title"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.609" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/loginEmailAddress"
@@ -56,7 +51,6 @@
         android:layout_width="250dp"
         android:layout_height="48dp"
         android:layout_marginTop="28dp"
-        android:layout_marginBottom="16dp"
         android:backgroundTint="@color/smokyWhite"
         android:fontFamily="@font/lancelot"
         android:hint="@string/password"
@@ -69,12 +63,10 @@
         android:textColor="@color/black"
         android:textColorHint="@color/black"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/loginButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/loginEmailAddress"
-        app:layout_constraintVertical_bias="0.288"
         tools:ignore="TextContrastCheck" />
 
     <Button
@@ -82,7 +74,7 @@
         android:layout_width="220dp"
         android:layout_height="48dp"
         android:layout_gravity="start"
-        android:layout_marginTop="564dp"
+        android:layout_marginTop="16dp"
         android:backgroundTint="@color/dark_org_button"
         android:enabled="true"
         android:fontFamily="@font/lancelot"
@@ -92,28 +84,26 @@
         android:textStyle="bold"
         app:cornerRadius="15sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/loginpassword" />
 
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="137dp"
         android:layout_height="139dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="16dp"
         android:contentDescription="@string/agora_logo"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/title"
         app:srcCompat="@drawable/agora" />
 
     <TextView
         android:id="@+id/title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="180dp"
-        android:layout_marginTop="100dp"
-        android:layout_marginEnd="180dp"
+        android:layout_width="191dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="16dp"
         android:fontFamily="@font/lancelot"
         android:text="@string/app_name"
         android:textAlignment="center"
@@ -121,8 +111,8 @@
         android:textSize="50sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

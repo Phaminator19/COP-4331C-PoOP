@@ -43,6 +43,12 @@
         <activity android:name=".JoinGroup"
             android:label="Join Group"
             android:parentActivityName=".UserProfile" />
+        <activity android:name=".EventActivity"
+            android:label="Create an Event"
+            android:parentActivityName=".GroupMenu" />
+        <activity android:name=".EventMainPage"
+            android:label="Current Event Activity"
+            android:parentActivityName=".GroupMenu" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

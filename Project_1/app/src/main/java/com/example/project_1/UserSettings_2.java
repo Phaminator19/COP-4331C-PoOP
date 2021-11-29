@@ -93,7 +93,7 @@ public class UserSettings_2 extends AppCompatActivity {
         userMap.put("Pronouns", PRONOUNS);
         userMap.put("Birthday", bd);
         userMap.put("Interest", inte);
-        reference.setValue(userMap);
+        reference.updateChildren(userMap);
 
         startActivity(new Intent(this, UserProfile.class));
         finish();
